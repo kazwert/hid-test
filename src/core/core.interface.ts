@@ -29,7 +29,7 @@ export interface Options {
   appName: string;
   clientId: string;
   clientSecret: string;
-  Icon?: JSX.Element | null;
+  Icon: JSX.Element;
 }
 
 type onCancelCallback = () => void;
