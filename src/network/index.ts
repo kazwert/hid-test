@@ -1,0 +1,48 @@
+/* eslint-disable prettier/prettier */
+import {LoginOTPRequest, LoginResponse, LoginRequest, LoginOTPResponse} from '../models/models.interface';
+import {NetworkResponse} from './network.interface';
+import xhr from './xhr';
+import {EventRegister, ON_ERROR} from '../core/eventManager';
+
+const defaultError = (e: string): NetworkResponse => ({
+  success: false,
+  code: 'FAILURE',
+  message: `Something wrong while requesting network ${e}`,
+  data: null
+});
+
+const catchErrorMessage = (e: any) => {
+  return e?.message || e;
+};
+
+export async function postLoginOTP(
+  params: LoginOTPRequest
+): Promise<NetworkResponse<LoginOTPResponse>> {
+  try {
+    const response = await xhr<LoginOTPRequest, LoginOTPResponse>(
+      '/users/login/request-otp',
+      params
+    );
+
+    return {...response};
+  } catch (e) {
+    EventRegister.emitEvent(ON_ERROR, catchErrorMessage(e));
+    return defaultError(catchErrorMessage(e));
+  }
+}
+
+export async function postLogin(
+  params: LoginRequest
+): Promise<NetworkResponse<LoginResponse>> {
+  try {
+    const response = await xhr<LoginRequest, LoginResponse>(
+      '/users/login',
+      params
+    );
+
+    return {...response};
+  } catch (e) {
+    EventRegister.emitEvent(ON_ERROR, catchErrorMessage(e));
+    return defaultError((catchErrorMessage(e)));
+  }
+}
