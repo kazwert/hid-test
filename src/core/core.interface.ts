@@ -22,14 +22,14 @@ export interface ConfigureParams {
   appName: string;
   clientId: string;
   clientSecret: string;
-  Icon?: JSX.Element | null;
+  Icon: JSX.Element | null;
 }
 
 export interface Options {
   appName: string;
   clientId: string;
   clientSecret: string;
-  Icon: JSX.Element;
+  Icon: JSX.Element | null;
 }
 
 type onCancelCallback = () => void;

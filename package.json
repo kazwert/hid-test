@@ -4,6 +4,9 @@
   "description": "A wrapper react-native library for humanID",
   "main": "dist/core/index.js",
   "types": "dist/core/index.d.ts",
+  "files": [
+    "dist/**/*"
+  ],
   "scripts": {
     "build": "tsc"
   },

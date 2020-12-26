@@ -27,7 +27,7 @@ export default class OTPInputView extends Component<
 
   private fields: TextInput[] | null[] = [];
   private keyboardDidHideListener?: EmitterSubscription;
-  private timer?: NodeJS.Timeout;
+  private timer?: number | undefined;
 
   constructor(props: InputProps) {
     super(props);
