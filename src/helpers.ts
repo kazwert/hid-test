@@ -12,13 +12,13 @@ export function checkClient() {
     options.clientSecret === null ||
     !options.clientSecret?.length
   ) {
-    return new Error(
+    throw new Error(
       'ClientId and ClientSecret must filled! get the appId and appSecret by dropping us an email developers@human-id.org.'
     );
   } else if (options.appName === null || !options.appName?.length) {
-    return new Error('HumanID need your application name, please fill your application name');
+    throw new Error('HumanID need your application name, please fill your application name');
   } else if (options.Icon === null) {
-    return new Error('HumanID need your application logo, please fill your application logo');
+    throw new Error('HumanID need your application logo, please fill your application logo');
   }
 }
 
