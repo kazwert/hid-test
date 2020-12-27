@@ -1,11 +1,14 @@
 {
   "name": "@bobbyecho/react-native-humanid",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A wrapper react-native library for humanID",
+  "publishConfig": {
+    "access": "public"
+  },
   "main": "lib/commonjs/core/index.js",
   "module": "lib/module/core/index.js",
   "react-native": "src/core/index.ts",
-  "types": "lib/typescript/src/index.d.ts",
+  "types": "lib/typescript/core/index.d.ts",
   "files": [
     "assets/",
     "src/",
@@ -36,6 +39,7 @@
   "devDependencies": {
     "@types/react": "^17.0.0",
     "@types/react-native": "^0.63.42",
+    "react-native-device-info": "^7.3.1",
     "react-native-builder-bob": "^0.17.1",
     "typescript": "^4.1.3"
   },

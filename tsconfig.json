@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "jsx": "react-native",
+    "moduleResolution": "node",
     "target": "es6",
     "module": "es6",
     "strict": true,
@@ -8,8 +9,7 @@
     "allowSyntheticDefaultImports": true,
     "skipLibCheck": true,
     "declaration": true,
-    "forceConsistentCasingInFileNames": true,
-    "outDir": "lib"
+    "forceConsistentCasingInFileNames": true
   },
   "exclude": [
     "node_modules",
