@@ -1,12 +1,9 @@
 {
   "name": "@bobbyecho/react-native-humanid",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A wrapper react-native library for humanID",
   "main": "dist/core/index.js",
   "types": "dist/core/index.d.ts",
-  "files": [
-    "dist/**/*"
-  ],
   "scripts": {
     "build": "tsc"
   },
