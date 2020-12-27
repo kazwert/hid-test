@@ -1,5 +1,5 @@
 {
-  "name": "react-native-humanid",
+  "name": "@bobbyecho/react-native-humanid",
   "version": "0.0.1",
   "description": "A wrapper react-native library for humanID",
   "main": "dist/core/index.js",
