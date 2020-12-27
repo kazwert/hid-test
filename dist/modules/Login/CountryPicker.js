@@ -30,7 +30,7 @@ const styles_1 = __importDefault(require("./styles"));
 const Context_1 = require("../../core/Context");
 const FlatListSeparator_1 = __importDefault(require("./FlatListSeparator"));
 const helpers_1 = require("../../helpers");
-const countries = require('../../assets/json/countries.json');
+const countries = require('../../../assets/json/countries.json');
 const arrCountry = Object.keys(countries).map((key) => {
     return countries[key];
 });

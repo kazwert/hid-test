@@ -3,7 +3,7 @@ import {MainComponentRef} from './core/core.interface';
 import Provider from './core/Provider';
 import {Countries, FlagType} from './modules/Login/Login.interface';
 
-const countries: Countries = require('./assets/json/countries.json');
+const countries: Countries = require('../assets/json/countries.json');
 
 export function checkClient() {
   if (

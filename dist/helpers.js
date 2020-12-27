@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.getCountry = exports.getDialCode = exports.registerRef = exports.checkClient = void 0;
 const options_1 = __importDefault(require("./core/options"));
 const Provider_1 = __importDefault(require("./core/Provider"));
-const countries = require('./assets/json/countries.json');
+const countries = require('../assets/json/countries.json');
 function checkClient() {
     var _a, _b, _c;
     if (options_1.default.clientId === null ||

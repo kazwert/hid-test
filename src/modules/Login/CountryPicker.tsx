@@ -13,7 +13,7 @@ import {Context} from '../../core/Context';
 import FlatListSeparator from './FlatListSeparator';
 import {getDialCode} from '../../helpers';
 
-const countries: Countries = require('../../assets/json/countries.json');
+const countries: Countries = require('../../../assets/json/countries.json');
 
 const arrCountry = Object.keys(countries).map((key) => {
   return countries[key as FlagType];
