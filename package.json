@@ -1,6 +1,6 @@
 {
   "name": "@bobbyecho/react-native-humanid",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A wrapper react-native library for humanID",
   "publishConfig": {
     "access": "public"
