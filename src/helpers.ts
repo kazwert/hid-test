@@ -22,10 +22,6 @@ export function checkClient() {
   }
 }
 
-export function registerRef(ref: MainComponentRef) {
-  Provider.ref = ref;
-}
-
 export function getDialCode(countryCode: FlagType) {
   return countries[countryCode]?.dialCode;
 }
