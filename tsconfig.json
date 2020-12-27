@@ -2,17 +2,17 @@
   "compilerOptions": {
     "jsx": "react-native",
     "target": "es6",
-    "module": "commonjs",
+    "module": "es6",
     "strict": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "skipLibCheck": true,
     "declaration": true,
     "forceConsistentCasingInFileNames": true,
-    "outDir": "./dist"
+    "outDir": "lib"
   },
   "exclude": [
     "node_modules",
-    "dist"
+    "lib"
   ]
 }
