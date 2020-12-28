@@ -42,7 +42,6 @@ const styles = StyleSheet.create({
   },
   sectionLogoText: {
     flexDirection: 'row',
-    paddingVertical: 3,
     paddingLeft: 3
   },
   continueWithText: {
