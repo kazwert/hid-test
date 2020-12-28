@@ -1,7 +1,7 @@
 {
   "name": "@bobbyecho/react-native-humanid",
   "version": "0.0.8",
-  "description": "A wrapper react-native library for humanID",
+  "description": "HumanID for react-native",
   "publishConfig": {
     "access": "public"
   },
@@ -31,7 +31,6 @@
     "url": "git+https://github.com/bobbyecho/react-native-humanid.git"
   },
   "author": "bobbyechop@gmail.com",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/bobbyecho/react-native-humanid/issues"
   },
