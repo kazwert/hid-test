@@ -19,13 +19,45 @@ const styles = StyleSheet.create({
     marginVertical: 10
   },
   imgButton: {
-    width: metrics.screenWidth - 100,
-    height: metrics.screenHeight * 0.07,
-    borderRadius: 4
+    width: 60,
+    height: 60,
+    marginRight: 10
   },
   appName: {
     ...globalStyles.title,
-    color: colors.white
+    color: colors.white,
+    fontWeight: 'bold'
+  },
+  containerButton: {
+    backgroundColor: colors.white,
+    borderRadius: 4,
+    padding: 15,
+    flexDirection: 'row',
+    alignItems: 'center'
+  },
+  containerLogoText: {
+    marginRight: 5,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  sectionLogoText: {
+    flexDirection: 'row',
+    paddingVertical: 3
+  },
+  continueWithText: {
+    ...globalStyles.title,
+    fontWeight: 'bold',
+    fontSize: 17,
+    marginRight: 3
+  },
+  privacyText: {
+    ...globalStyles.description,
+    color: colors.gray
+  },
+  imgText: {
+    flex: 1,
+    height: 17,
+    marginTop: -1.5
   }
 });
 

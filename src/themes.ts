@@ -18,7 +18,8 @@ const colors = {
 };
 
 const images = {
-  buttonBackground: require('../assets/img/bg-button-login.png'),
+  logoIcon: require('../assets/img/logo-icon.png'),
+  logoText: require('../assets/img/logo-text.png'),
   logoOutline: require('../assets/img/logo-outline.png'),
   logoLight: require('../assets/img/logo-light.png'),
   arrowDown: require('../assets/img/arrow_down.png')
