@@ -48,24 +48,24 @@ Get the appId and appSecret by dropping us an email [developers@human-id.org](ma
 at your index.js file
 
 ```sh
-import {configureHumanID} from 'react-native-humanid'
-import AppLogo from 'path/your-app-logo'
+import {configureHumanID} from "react-native-humanid"
+import AppLogo from "path/your-app-logo"
 
 configureHumanID({
-  appName: 'Your application NAme',
-  clientSecret: 'APP_SECRET',
-  clientId: 'APP_ID',
+  appName: "Your application NAme",
+  clientSecret: "APP_SECRET",
+  clientId: "APP_ID",
   Icon: AppLogo (Icon is JSX.Element)
-});
+})
 
-AppRegistry.registerComponent(appName, () => App);
+AppRegistry.registerComponent(appName, () => App)
 ```
 
 ## How to use
 
 #### Register humanID Provider at your Top Container Application
 ```sh
-import {HumanIDProvider} from 'react-native-humanid'
+import {HumanIDProvider} from "react-native-humanid"
 
 const App = () => {
     return (
@@ -81,7 +81,7 @@ export default App
 #### Login
 
 ```sh
-import {logIn} from 'react-native-humanid'
+import {logIn} from "react-native-humanid"
 
 const HomeScreen = () => {
     const handleLogin = () => {
@@ -100,18 +100,18 @@ export default HomeScreen
 We suggest put this method into lifecycle that only live once on your screen, example: <b>componentDidMount</b> if you use class component, otherwise you can use <b>useEffect</b>
 
 ```sh
-import {onCancel, onSuccess, onError} from 'react-native-humanid'
+import {onCancel, onSuccess, onError} from "react-native-humanid"
 
 const HomeScreen = () => {
     React.useEffect(() => {
         onSuccess((exchangeToken) => {
-          console.log('exchangeToken', exchangeToken)
+          console.log("exchangeToken", exchangeToken)
         })
         onError((message) => {
-          console.log('error message', message)
+          console.log("error message", message)
         })
         onCancel(() => {
-          console.log('canceled')
+          console.log("canceled")
         })
     }, [])
 }
