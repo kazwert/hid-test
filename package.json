@@ -1,6 +1,6 @@
 {
   "name": "@bobbyecho/react-native-humanid",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "HumanID for react-native",
   "license": "GNU GPL V3.0",
   "publishConfig": {
