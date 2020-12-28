@@ -12,7 +12,7 @@ import {loginAction} from '../models/loginModel';
 import {loginOTPAction} from '../models/loginOTPModel';
 import {IMainComponent} from '../core/core.interface';
 
-const MainComponent: IMainComponent = (props, ref): React.ReactElement => {
+const MainComponent: IMainComponent = (_props, ref): React.ReactElement => {
   checkClient();
 
   const [state, dispatch] = useReducer(rootReducer, rootState);

@@ -4,10 +4,10 @@ import {
   IOnCancel,
   IOnError,
   IOnSuccess
-} from './core.interface';
-import {EventRegister, ON_CANCEL, ON_ERROR, ON_SUCCESS} from './eventManager';
-import options from './options';
-import Provider from './Provider';
+} from './core/core.interface';
+import {EventRegister, ON_CANCEL, ON_ERROR, ON_SUCCESS} from './core/eventManager';
+import options from './core/options';
+import HumanIDProvider from './core/Provider';
 
 const configureHumanID: IConfigureHumanID = (params) => {
   const {appName, clientId, clientSecret, Icon = null} = params;
@@ -19,7 +19,7 @@ const configureHumanID: IConfigureHumanID = (params) => {
 };
 
 const logIn: ILogIn = () => {
-  Provider.ref?.logIn();
+  HumanIDProvider.ref?.logIn();
 };
 
 const onCancel: IOnCancel = (callback) => {
@@ -52,5 +52,5 @@ export {
   onError,
   onSuccess,
   onCancel,
-  Provider as HumanIDProvider
+  HumanIDProvider
 };
