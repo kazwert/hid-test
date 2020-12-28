@@ -5,7 +5,12 @@
 <h1 align="center">humanID React Native</h1>
 
 <p align="center">
-[![npm version](https://badge.fury.io/js/%40bobbyecho%2Freact-native-humanid.svg)](https://badge.fury.io/js/%40bobbyecho%2Freact-native-humanid) [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://github.com/bobbyecho/react-native-humanid/blob/master/LICENSE)
+  <a href="https://www.npmjs.com/package/@bobbyecho/react-native-humanid">
+    <img src="https://badge.fury.io/js/%40bobbyecho%2Freact-native-humanid.svg" alt="npm version">
+  </a>
+  <a href="https://github.com/bobbyecho/react-native-humanid/blob/master/LICENSE">
+    <img src="https://img.shields.io/badge/License-GPL%20v3-blue.svg" alt="license" />
+  </a>
 </p>
 
 <p align="center">
@@ -21,9 +26,9 @@ Meet humanID - An anonymous online identity, enabling platforms to offer the spe
 </p>
 
 ## Requirements
-React 16.8.2+
-React Native 0.55.0+
-react-native-device-info 7.3.1+
+- React 16.8.2+
+- React Native 0.55.0+
+- react-native-device-info 7.3.1+
 
 
 ## Installation
