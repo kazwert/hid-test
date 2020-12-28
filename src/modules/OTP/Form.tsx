@@ -21,7 +21,7 @@ function Form(): JSX.Element {
 
   const otpRef = useRef<OTPInputView>(null);
 
-  const timerRef = useRef<number | undefined>();
+  const timerRef = useRef<NodeJS.Timeout>();
 
   const [timer, setTimer] = useState(
     state.loginOTPPayload?.data?.config?.nextResendDelay ?? 60

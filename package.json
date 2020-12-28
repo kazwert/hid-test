@@ -2,13 +2,15 @@
   "name": "@bobbyecho/react-native-humanid",
   "version": "0.0.9",
   "description": "HumanID for react-native",
-  "license": "GNU GPL V3.0",
+  "license": "SEE LICENSE IN LISENCE",
+  "private": false,
   "publishConfig": {
-    "access": "public"
+    "registry": "https://registry.npmjs.org/"
   },
-  "main": "lib/commonjs/index.js",
-  "module": "lib/module/index.js",
-  "react-native": "src/index.ts",
+  "main": "lib/commonjs/index",
+  "module": "lib/module/index",
+  "react-native": "src/index",
+  "source": "src/index",
   "types": "lib/typescript/src/index.d.ts",
   "files": [
     "src",
@@ -19,15 +21,29 @@
     "assets/"
   ],
   "scripts": {
-    "prepare": "bob build"
+    "typescript": "tsc --noEmit",
+    "prepare": "bob build",
+    "release": "release-it"
   },
+  "keywords": [
+    "react-native",
+    "humanid",
+    "react-native-humanid",
+    "android",
+    "ios"
+  ],
   "react-native-builder-bob": {
     "source": "src",
     "output": "lib",
     "targets": [
       "commonjs",
       "module",
-      "typescript"
+      [
+        "typescript",
+        {
+          "project": "tsconfig.build.json"
+        }
+      ]
     ]
   },
   "repository": {
@@ -44,7 +60,9 @@
     "@types/react-native": "^0.63.42",
     "react-native-builder-bob": "^0.17.1",
     "react-native-device-info": "^7.3.1",
-    "typescript": "^4.1.3"
+    "typescript": "^4.1.3",
+    "@release-it/conventional-changelog": "^2.0.0",
+    "release-it": "^14.2.2"
   },
   "dependencies": {
     "google-libphonenumber": "3.2.15",
@@ -58,5 +76,22 @@
   "eslintIgnore": [
     "node_modules/",
     "lib/"
-  ]
+  ],
+  "release-it": {
+    "git": {
+      "commitMessage": "chore: release ${version}",
+      "tagName": "v${version}"
+    },
+    "npm": {
+      "publish": true
+    },
+    "github": {
+      "release": true
+    },
+    "plugins": {
+      "@release-it/conventional-changelog": {
+        "preset": "angular"
+      }
+    }
+  }
 }
