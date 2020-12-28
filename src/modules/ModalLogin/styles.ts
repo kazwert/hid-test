@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'space-around',
     alignItems: 'center',
-    height: metrics.screenHeight * 0.4,
+    height: metrics.screenHeight * 0.5,
     ...(globalStyles.containerModal as ViewStyle)
   },
   tosLabel: {
@@ -32,32 +32,34 @@ const styles = StyleSheet.create({
     backgroundColor: colors.white,
     borderRadius: 4,
     padding: 15,
-    flexDirection: 'row',
-    alignItems: 'center'
+    flexDirection: 'row'
   },
   containerLogoText: {
+    paddingVertical: 10,
     marginRight: 5,
-    justifyContent: 'center',
-    alignItems: 'center'
   },
   sectionLogoText: {
+    paddingLeft: 10,
     flexDirection: 'row',
-    paddingLeft: 3
   },
   continueWithText: {
     ...globalStyles.title,
     fontWeight: 'bold',
-    fontSize: 17,
-    marginRight: 3
+    fontSize: 15
   },
   privacyText: {
     ...globalStyles.description,
-    color: colors.gray
+    flex: 1,
+    color: colors.gray,
+    alignSelf: 'center'
   },
   imgText: {
     flex: 1,
-    height: 17,
-    marginTop: -1.5
+    height: '140%',
+    alignSelf: 'center',
+    resizeMode: 'contain',
+    marginTop: -5,
+    marginLeft: -5
   }
 });
 
