@@ -5,7 +5,12 @@ import styles from './styles';
 
 function TermsOfService(): JSX.Element {
   return (
-    <Text style={styles.tosLabel}>{`I hereby agree to ${options.appName}'s Terms of Service`}</Text>
+    <Text
+      style={styles.tosLabel}
+      textBreakStrategy="balanced"
+    >
+      {`I hereby agree to ${options.appName}'s Terms of Service`}
+    </Text>
   );
 }
 

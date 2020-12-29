@@ -16,7 +16,8 @@ const styles = StyleSheet.create({
   },
   tosLabel: {
     color: colors.orange,
-    marginVertical: 10
+    marginVertical: 10,
+    textAlign: 'center'
   },
   imgButton: {
     width: 60,
