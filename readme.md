@@ -58,7 +58,11 @@ import {configureHumanID} from "react-native-humanid"
 import AppLogo from "path/your-app-logo"  
   
 configureHumanID({  
- appName: "Your application NAme", clientSecret: "APP_SECRET", clientId: "APP_ID", Icon: AppLogo (Icon is JSX.Element)})  
+    appName: "Your application NAme",
+    clientSecret: "APP_SECRET",
+    clientId: "APP_ID",
+    Icon: AppLogo (Icon is JSX.Element)
+})  
   
 AppRegistry.registerComponent(appName, () => App)  
 ```  
@@ -70,7 +74,12 @@ AppRegistry.registerComponent(appName, () => App)
 import {HumanIDProvider} from "react-native-humanid"  
   
 const App = () => {  
- return ( <View> <HumanIDProvider /> </View> )}  
+    return (
+        <View>
+            <HumanIDProvider />
+        </View>
+    )
+}  
   
 export default App  
 ```  
@@ -81,8 +90,12 @@ export default App
 import {logIn} from "react-native-humanid"  
   
 const HomeScreen = () => {  
- const handleLogin = () => { logIn() }     return (  
- <Button title="Login" onPress={handleLogin} /> )}  
+    const handleLogin = () => {
+        logIn()
+    }
+    
+    return <Button title="Login" onPress={handleLogin} />
+}  
   
 export default HomeScreen  
 ```  
@@ -94,8 +107,19 @@ We suggest put this method into lifecycle that only live once on your screen, ex
 import {onCancel, onSuccess, onError} from "react-native-humanid"  
   
 const HomeScreen = () => {  
- React.useEffect(() => { onSuccess((exchangeToken) => { console.log("exchangeToken", exchangeToken) }) onError((message) => { console.log("error message", message) }) onCancel(() => { console.log("canceled") }) }, [])}  
-  
+    React.useEffect(() => {
+        onSuccess((exchangeToken) => {
+            console.log("exchangeToken", exchangeToken)
+        })
+        onError((message) => {
+            console.log("error message", message)
+        })
+        onCancel(() => {
+            console.log("canceled")
+        })
+    }, [])
+}  
+ 
 export default HomeScreen  
 ```  
   
