@@ -1,11 +1,11 @@
 {
   "name": "@bobbyecho/react-native-humanid",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "HumanID for react-native",
   "license": "SEE LICENSE IN LISENCE",
   "private": false,
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
+    "registry": "https://registry.npmjs.org"
   },
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
@@ -50,7 +50,7 @@
     "type": "git",
     "url": "git+https://github.com/bobbyecho/react-native-humanid.git"
   },
-  "author": "bobbyechop@gmail.com",
+  "author": "bobbyecho",
   "bugs": {
     "url": "https://github.com/bobbyecho/react-native-humanid/issues"
   },
@@ -83,7 +83,8 @@
       "tagName": "v${version}"
     },
     "npm": {
-      "publish": true
+      "publish": true,
+      "registry": "https://registry.npmjs.org"
     },
     "github": {
       "release": true
