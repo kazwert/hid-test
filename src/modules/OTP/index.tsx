@@ -1,5 +1,5 @@
 import React, {useContext} from 'react';
-import {View} from 'react-native';
+import {KeyboardAvoidingView, Platform, View} from 'react-native';
 import Modal from 'react-native-modal';
 import Logo from './Logo';
 import styles from './styles';
@@ -22,11 +22,16 @@ function OTP(): JSX.Element {
       backdropOpacity={0.3}
       onBackdropPress={hideSelf}
       onBackButtonPress={hideSelf}>
-      <View style={styles.container}>
-        <Logo />
-        <Description />
-        <Form />
-      </View>
+      <KeyboardAvoidingView
+        style={styles.keyboardAvoid}
+        behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+      >
+        <View style={styles.container}>
+          <Logo />
+          <Description />
+          <Form />
+        </View>
+      </KeyboardAvoidingView>
     </Modal>
   );
 }

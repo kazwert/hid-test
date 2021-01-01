@@ -3,12 +3,12 @@ import {colors, globalStyles, metrics} from '../../themes';
 
 const styles = StyleSheet.create({
   modal: {
+    justifyContent: 'flex-end',
     margin: 0,
     width: metrics.screenWidth
   },
   container: {
     backgroundColor: colors.primary,
-    flex: 1,
     justifyContent: 'space-around',
     alignItems: 'center',
     height: metrics.screenHeight * 0.5,
@@ -32,7 +32,8 @@ const styles = StyleSheet.create({
   containerButton: {
     backgroundColor: colors.white,
     borderRadius: 4,
-    padding: 15,
+    paddingVertical: 5,
+    paddingHorizontal: 10,
     flexDirection: 'row'
   },
   containerLogoText: {
@@ -56,11 +57,9 @@ const styles = StyleSheet.create({
   },
   imgText: {
     flex: 1,
-    height: '140%',
+    height: '100%',
     alignSelf: 'center',
-    resizeMode: 'contain',
-    marginTop: -5,
-    marginLeft: -5
+    resizeMode: 'cover',
   }
 });
 

@@ -1,7 +1,6 @@
 import React, {useReducer} from 'react';
 import ModalLogin from './ModalLogin';
 import Login from './Login';
-import OTP from './OTP';
 import {Context} from '../core/Context';
 import {checkClient} from '../helpers';
 import useGlobalState from '../core/useGlobalState';
@@ -74,7 +73,6 @@ const MainComponent: IMainComponent = (_props, ref): React.ReactElement => {
       }}>
       <ModalLogin />
       <Login />
-      <OTP />
     </Context.Provider>
   );
 };

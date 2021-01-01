@@ -1,6 +1,6 @@
 import React, {useContext} from 'react';
 import {View, Text, Image, TouchableOpacity, FlatList} from 'react-native';
-import NativeModal from 'react-native-modal';
+import Modal from 'react-native-modal';
 import {flags, images} from '../../themes';
 import {
   Countries,
@@ -19,7 +19,7 @@ const arrCountry = Object.keys(countries).map((key) => {
   return countries[key as FlagType];
 });
 
-function Modal(props: CountryPickerProps) {
+function CountryPicker(props: CountryPickerProps) {
   const {onSelected} = props;
 
   const {countryCode} = useContext(Context);
@@ -71,35 +71,33 @@ function Modal(props: CountryPickerProps) {
           <Image source={images.arrowDown} style={styles.arrowDown} />
         </View>
       </TouchableOpacity>
-      <NativeModal
-        useNativeDriver={true}
-        avoidKeyboard={false}
-        animationInTiming={500}
-        animationOut="fadeOut"
-        animationOutTiming={500}
-        isVisible={visible}
-        backdropOpacity={0.5}>
-        <View>
-          <View style={styles.containerModal}>
-            <FlatList
-              keyExtractor={keyExtractor}
-              data={arrCountry}
-              renderItem={renderItem}
-              scrollEnabled={true}
-              showsVerticalScrollIndicator={false}
-              maxToRenderPerBatch={15}
-              ItemSeparatorComponent={FlatListSeparator}
-            />
-          </View>
+      {visible && (
+        <Modal
+          useNativeDriver={true}
+          isVisible={visible}
+          backdropOpacity={0.5}>
           <View>
-            <TouchableOpacity activeOpacity={0.3} onPress={toggleModal}>
-              <Text style={styles.btnCancelCountryPicker}>Cancel</Text>
-            </TouchableOpacity>
+            <View style={styles.containerModal}>
+              <FlatList
+                keyExtractor={keyExtractor}
+                data={arrCountry}
+                renderItem={renderItem}
+                scrollEnabled={true}
+                showsVerticalScrollIndicator={false}
+                maxToRenderPerBatch={15}
+                ItemSeparatorComponent={FlatListSeparator}
+              />
+            </View>
+            <View>
+              <TouchableOpacity activeOpacity={0.3} onPress={toggleModal}>
+                <Text style={styles.btnCancelCountryPicker}>Cancel</Text>
+              </TouchableOpacity>
+            </View>
           </View>
-        </View>
-      </NativeModal>
+        </Modal>
+      )}
     </>
   );
 }
 
-export default Modal;
+export default CountryPicker;

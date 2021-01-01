@@ -1,6 +1,7 @@
 import React, {useContext} from 'react';
-import {KeyboardAvoidingView, Platform, SafeAreaView, Text} from 'react-native';
+import {KeyboardAvoidingView, Platform, View, Text} from 'react-native';
 import Modal from 'react-native-modal';
+import OTP from '../OTP';
 import Illustration from './Illustration';
 import Description from './Description';
 import TermsDescription from './TermsDescription';
@@ -29,31 +30,34 @@ function Login(): JSX.Element {
   };
 
   return (
-    <Modal
-      useNativeDriver={true}
-      avoidKeyboard={false}
-      animationInTiming={500}
-      animationOut="fadeOut"
-      animationOutTiming={500}
-      isVisible={loginVisible}
-      onBackButtonPress={hideSelf}
-      backdropOpacity={1}
-      backdropColor={colors.primary}
-      coverScreen={true}>
-      <KeyboardAvoidingView
-        style={styles.keyboardAvoid}
-        behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
-        <SafeAreaView style={styles.container}>
-          <Illustration />
-          <Description />
-          <Form />
-          <TermsDescription />
-          <Text style={styles.btnCancel} onPress={handleOnCancel}>
-            Cancel
-          </Text>
-        </SafeAreaView>
-      </KeyboardAvoidingView>
-    </Modal>
+    <>
+      <Modal
+        useNativeDriver={true}
+        avoidKeyboard={false}
+        animationInTiming={500}
+        animationOut="fadeOut"
+        animationOutTiming={500}
+        isVisible={loginVisible}
+        onBackButtonPress={hideSelf}
+        backdropOpacity={1}
+        backdropColor={colors.primary}
+        coverScreen={true}>
+        <KeyboardAvoidingView
+          style={styles.keyboardAvoid}
+          behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
+          <View style={styles.container}>
+            <Illustration />
+            <Description />
+            <Form />
+            <TermsDescription />
+            <Text style={styles.btnCancel} onPress={handleOnCancel}>
+              Cancel
+            </Text>
+          </View>
+        </KeyboardAvoidingView>
+      </Modal>
+      <OTP />
+    </>
   );
 }
 

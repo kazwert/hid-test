@@ -12,9 +12,12 @@ const styles = StyleSheet.create({
     marginVertical: 25,
     alignSelf: 'center'
   },
+  keyboardAvoid: {
+    flex: 1,
+    justifyContent: 'flex-end'
+  },
   container: {
     backgroundColor: colors.white,
-    flex: 1,
     justifyContent: 'space-between',
     height: metrics.screenHeight * 0.65,
     ...(globalStyles.containerModal as ViewStyle)

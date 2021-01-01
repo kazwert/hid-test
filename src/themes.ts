@@ -282,9 +282,7 @@ const globalStyles = {
     padding: 25
   },
   containerModal: {
-    position: 'absolute',
     padding: 25,
-    bottom: 0,
     width: metrics.screenWidth,
     borderTopLeftRadius: 50,
     borderTopRightRadius: 50
