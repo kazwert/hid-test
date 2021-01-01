@@ -30,34 +30,32 @@ function Login(): JSX.Element {
   };
 
   return (
-    <>
-      <Modal
-        useNativeDriver={true}
-        avoidKeyboard={false}
-        animationInTiming={500}
-        animationOut="fadeOut"
-        animationOutTiming={500}
-        isVisible={loginVisible}
-        onBackButtonPress={hideSelf}
-        backdropOpacity={1}
-        backdropColor={colors.primary}
-        coverScreen={true}>
-        <KeyboardAvoidingView
-          style={styles.keyboardAvoid}
-          behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
-          <View style={styles.container}>
-            <Illustration />
-            <Description />
-            <Form />
-            <TermsDescription />
-            <Text style={styles.btnCancel} onPress={handleOnCancel}>
-              Cancel
-            </Text>
-          </View>
-        </KeyboardAvoidingView>
-      </Modal>
+    <Modal
+      useNativeDriver={true}
+      avoidKeyboard={false}
+      animationInTiming={500}
+      animationOut="fadeOut"
+      animationOutTiming={500}
+      isVisible={loginVisible}
+      onBackButtonPress={hideSelf}
+      backdropOpacity={1}
+      backdropColor={colors.primary}
+      coverScreen={true}>
+      <KeyboardAvoidingView
+        style={styles.keyboardAvoid}
+        behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
+        <View style={styles.container}>
+          <Illustration />
+          <Description />
+          <Form />
+          <TermsDescription />
+          <Text style={styles.btnCancel} onPress={handleOnCancel}>
+            Cancel
+          </Text>
+        </View>
+      </KeyboardAvoidingView>
       <OTP />
-    </>
+    </Modal>
   );
 }
 

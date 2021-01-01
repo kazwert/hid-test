@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: colors.white,
     justifyContent: 'space-between',
-    height: metrics.screenHeight * 0.65,
+    height: metrics.screenHeight * 0.60,
     ...(globalStyles.containerModal as ViewStyle)
   },
   title: {
