@@ -15,6 +15,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingHorizontal: 40
   },
+  containerModal: {
+    backgroundColor: colors.graySmooth,
+    marginHorizontal: 15,
+    height: metrics.screenHeight / 1.5,
+    borderRadius: 6
+  },
   content: {
     flex: 1,
     alignItems: 'center',

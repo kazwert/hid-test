@@ -1,5 +1,5 @@
 import React, {useContext} from 'react';
-import {Platform, View, Text, ScrollView} from 'react-native';
+import {View, Text, ScrollView} from 'react-native';
 import Modal from 'react-native-modal';
 import OTP from '../OTP';
 import Illustration from './Illustration';

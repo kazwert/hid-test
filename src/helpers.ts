@@ -32,12 +32,13 @@ export function getCountry(countryCode: FlagType) {
 
 const { height, width } = Dimensions.get('window');
 const standardLength = width > height ? width : height;
+
 const offset =
   width > height ? 0 : Platform.OS === 'ios' ? 78 : StatusBar.currentHeight; // iPhone X style SafeAreaView size in portrait
 
 const deviceHeight =
   Platform.OS === 'android' || isIphoneX()
-    ? standardLength - offset
+    ? standardLength - offset!
     : standardLength;
 
 export function RFPercentage(percent: number) {
