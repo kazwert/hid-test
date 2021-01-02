@@ -27,9 +27,11 @@ function OTP(): JSX.Element {
         behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
       >
         <View style={styles.container}>
-          <Logo />
-          <Description />
-          <Form />
+            <Logo />
+            <View style={styles.containerDescForm}>
+              <Description />
+              <Form />
+            </View>
         </View>
       </KeyboardAvoidingView>
     </Modal>

@@ -1,5 +1,10 @@
-import {StyleSheet, ViewStyle} from 'react-native';
+import {StyleSheet, ViewStyle, Dimensions} from 'react-native';
 import {colors, globalStyles, metrics} from '../../themes';
+import {RFValue} from '../../helpers';
+
+const {height} = Dimensions.get('window');
+
+const percentage = height <= 640 ? 0.6 : 0.5;
 
 const styles = StyleSheet.create({
   modal: {
@@ -11,25 +16,31 @@ const styles = StyleSheet.create({
     backgroundColor: colors.primary,
     justifyContent: 'space-around',
     alignItems: 'center',
-    height: metrics.screenHeight * 0.5,
+    height: metrics.screenHeight * percentage,
     ...(globalStyles.containerModal as ViewStyle)
   },
+  containerIconAppName: {
+    alignItems: 'center'
+  },
   tosLabel: {
+    ...globalStyles.description,
     color: colors.orange,
     marginVertical: 10,
     textAlign: 'center'
   },
   imgButton: {
-    width: 60,
-    height: 60,
+    width: RFValue(60),
+    height: RFValue(60),
     marginRight: 10
   },
   appName: {
     ...globalStyles.title,
     color: colors.white,
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    marginTop: 25
   },
   containerButton: {
+    minHeight: 50,
     backgroundColor: colors.white,
     borderRadius: 4,
     paddingVertical: 5,
@@ -37,29 +48,37 @@ const styles = StyleSheet.create({
     flexDirection: 'row'
   },
   containerLogoText: {
-    paddingVertical: 10,
-    marginRight: 5,
+    flexDirection: 'column',
+    marginRight: 5
+  },
+  subContainerLogoText: {
+    flex: 1,
+    paddingVertical: 5
   },
   sectionLogoText: {
+    flex: 1,
     paddingLeft: 10,
     flexDirection: 'row',
   },
   continueWithText: {
-    ...globalStyles.title,
+    ...globalStyles.normal,
     fontWeight: 'bold',
-    fontSize: 15
+    alignSelf: 'center'
   },
   privacyText: {
     ...globalStyles.description,
     flex: 1,
+    marginTop: -5,
     color: colors.gray,
     alignSelf: 'center'
   },
   imgText: {
     flex: 1,
-    height: '100%',
+    height: RFValue(30),
+    marginTop: RFValue(-3),
+    marginLeft: 2.5,
     alignSelf: 'center',
-    resizeMode: 'cover',
+    resizeMode: 'contain',
   }
 });
 

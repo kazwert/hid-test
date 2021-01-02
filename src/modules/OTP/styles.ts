@@ -1,5 +1,6 @@
 import {StyleSheet, ViewStyle} from 'react-native';
 import {colors, globalStyles, metrics} from '../../themes';
+import {RFPercentage, RFValue} from '../../helpers';
 
 const styles = StyleSheet.create({
   modal: {
@@ -7,10 +8,11 @@ const styles = StyleSheet.create({
     width: metrics.screenWidth
   },
   logo: {
-    width: 150,
-    height: 40,
-    marginVertical: 25,
-    alignSelf: 'center'
+    resizeMode: 'contain',
+    width: '100%',
+    height: RFValue(40),
+    alignSelf: 'center',
+    marginBottom: 25
   },
   keyboardAvoid: {
     flex: 1,
@@ -18,9 +20,11 @@ const styles = StyleSheet.create({
   },
   container: {
     backgroundColor: colors.white,
-    justifyContent: 'space-between',
-    height: metrics.screenHeight * 0.60,
+    height: metrics.screenHeight * 0.65,
     ...(globalStyles.containerModal as ViewStyle)
+  },
+  containerDescForm: {
+    flex: 1
   },
   title: {
     ...globalStyles.title,
@@ -36,29 +40,25 @@ const styles = StyleSheet.create({
     textAlign: 'center'
   },
   textSpace: {
-    marginVertical: 20
+    marginVertical: 10
   },
   resendCode: {
     ...globalStyles.descriptionBold,
     color: colors.gray
   },
-  containerPhoneNumber: {
-    paddingHorizontal: 25,
-    flexDirection: 'row',
-    justifyContent: 'center'
-  },
   containerDescription: {
-    alignItems: 'center'
+    flex: 1,
+    justifyContent: 'space-around',
   },
   formContainer: {
     flex: 1,
-    justifyContent: 'space-around',
-    alignItems: 'center'
+    alignItems: 'center',
+    justifyContent: 'space-around'
   },
   otpView: {
-    width: '80%',
+    width: RFPercentage(50),
     height: 50,
-    marginTop: 20
+    paddingHorizontal: RFValue(20)
   },
   otpFieldStyle: {
     width: 65,

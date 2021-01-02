@@ -6,7 +6,7 @@ import styles from './styles';
 function Description(): JSX.Element {
   return (
     <View style={styles.centerContent}>
-      <Text style={styles.desc}>
+      <Text style={[styles.desc, styles.textSpace]}>
         HumanID confirms your phone number without sharing it with {options.appName}
       </Text>
       <Text style={[styles.desc, styles.textSpace]}>

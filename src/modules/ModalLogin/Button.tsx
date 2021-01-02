@@ -15,16 +15,18 @@ function Button(props: ButtonProps): JSX.Element {
                 source={images.logoIcon}
               />
               <View style={styles.containerLogoText}>
-                  <View style={styles.sectionLogoText}>
-                      <Text style={styles.continueWithText}>Continue with</Text>
-                      <Image
-                        style={styles.imgText}
-                        source={images.logoText}
-                      />
+                  <View style={styles.subContainerLogoText}>
+                      <View style={styles.sectionLogoText}>
+                          <Text style={styles.continueWithText}>Continue with</Text>
+                          <Image
+                            style={styles.imgText}
+                            source={images.logoText}
+                          />
+                      </View>
+                      <Text style={styles.privacyText}>
+                          (recommended for full privacy)
+                      </Text>
                   </View>
-                  <Text style={styles.privacyText}>
-                      (recommended for full privacy)
-                  </Text>
               </View>
           </View>
       </TouchableOpacity>

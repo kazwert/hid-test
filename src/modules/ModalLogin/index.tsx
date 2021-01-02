@@ -4,7 +4,6 @@ import Modal from 'react-native-modal';
 import Button from './Button';
 import TermsOfService from './TermsOfService';
 import styles from './styles';
-import AppName from './AppName';
 import Logo from './Logo';
 import {Context} from '../../core/Context';
 
@@ -43,7 +42,6 @@ function ModalLogin(): JSX.Element {
       onModalHide={handleWillHide}>
       <View style={styles.container}>
         <Logo />
-        <AppName />
         <Button onPress={handleContinue} />
         <TermsOfService />
       </View>

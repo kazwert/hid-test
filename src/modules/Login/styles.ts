@@ -1,17 +1,29 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet, Platform} from 'react-native';
+import {isIphoneX} from 'react-native-iphone-x-helper';
 import {colors, globalStyles, metrics} from '../../themes';
+import {RFValue} from '../../helpers';
 
 const styles = StyleSheet.create({
+  modal: {
+    margin: 0,
+    flex: 1
+  },
   container: {
     ...globalStyles.container,
     flex: 1,
-    backgroundColor: colors.primary,
+    height: metrics.screenHeight,
+    alignItems: 'center',
+    paddingHorizontal: 40
+  },
+  content: {
+    flex: 1,
     alignItems: 'center',
     justifyContent: 'space-around'
   },
   illustration: {
-    width: 150,
-    height: 150
+    width: RFValue(120),
+    height: RFValue(120),
+    ...isIphoneX() && { marginTop: 25 }
   },
   desc: {
     ...globalStyles.normal,
@@ -19,7 +31,7 @@ const styles = StyleSheet.create({
     textAlign: 'center'
   },
   textSpace: {
-    marginVertical: 20
+    marginVertical: 10
   },
   termsText: {
     ...globalStyles.description,
@@ -41,17 +53,17 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    marginVertical: 15,
-    marginHorizontal: 25
+    marginVertical: RFValue(10),
+    paddingHorizontal: 25
   },
   textInput: {
     width: '65%',
+    height: '100%',
     marginHorizontal: 5,
+    ...Platform.OS === 'android' && { marginTop: -5 },
     borderBottomWidth: 1,
     borderBottomColor: colors.white,
-    paddingHorizontal: 20,
-    paddingVertical: 15,
-    marginTop: -10,
+    paddingHorizontal: 10,
     color: colors.white,
     ...globalStyles.title,
     textAlign: 'center'
@@ -99,12 +111,6 @@ const styles = StyleSheet.create({
     marginHorizontal: 15,
     paddingVertical: 15
   },
-  containerModal: {
-    backgroundColor: colors.graySmooth,
-    marginHorizontal: 15,
-    height: metrics.screenHeight / 1.5,
-    borderRadius: 6
-  },
   separator: {
     height: 1,
     backgroundColor: colors.gray400
@@ -115,13 +121,13 @@ const styles = StyleSheet.create({
     marginLeft: 5
   },
   containerInputCountryCode: {
-    height: 39,
+    height: 40,
     flexDirection: 'row',
     alignItems: 'center',
     borderBottomColor: colors.white,
     borderBottomWidth: 1,
-    paddingBottom: 10,
-    paddingHorizontal: 5
+    paddingHorizontal: 5,
+    ...Platform.OS === 'android' && { paddingBottom: 5 }
   },
   btnCancelCountryPicker: {
     textAlign: 'center',

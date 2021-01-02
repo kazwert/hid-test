@@ -1,4 +1,5 @@
 import {Dimensions} from 'react-native';
+import {RFValue} from './helpers';
 const {width, height} = Dimensions.get('window');
 
 const fonts = {
@@ -288,35 +289,35 @@ const globalStyles = {
     borderTopRightRadius: 50
   },
   title: {
-    fontSize: 16,
+    fontSize: RFValue(16),
     fontFamily: fonts.bold,
     letterSpacing: 1,
     lineHeight: 18
   },
   otpText: {
-    fontSize: 24,
+    fontSize: RFValue(24),
     fontFamily: fonts.bold
   },
   normal: {
-    fontSize: 14,
+    fontSize: RFValue(14),
     fontFamily: fonts.base,
     letterSpacing: 1,
     lineHeight: 18
   },
   normalBold: {
-    fontSize: 14,
+    fontSize: RFValue(14),
     fontFamily: fonts.bold,
     letterSpacing: 1,
     lineHeight: 18
   },
   description: {
-    fontSize: 12,
+    fontSize: RFValue(12),
     fontFamily: fonts.base,
     letterSpacing: 1,
     lineHeight: 18
   },
   descriptionBold: {
-    fontSize: 12,
+    fontSize: RFValue(12),
     fontFamily: fonts.bold,
     letterSpacing: 1,
     lineHeight: 18

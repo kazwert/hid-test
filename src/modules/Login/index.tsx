@@ -1,5 +1,5 @@
 import React, {useContext} from 'react';
-import {KeyboardAvoidingView, Platform, View, Text} from 'react-native';
+import {Platform, View, Text, ScrollView} from 'react-native';
 import Modal from 'react-native-modal';
 import OTP from '../OTP';
 import Illustration from './Illustration';
@@ -30,32 +30,34 @@ function Login(): JSX.Element {
   };
 
   return (
-    <Modal
-      useNativeDriver={true}
-      avoidKeyboard={false}
-      animationInTiming={500}
-      animationOut="fadeOut"
-      animationOutTiming={500}
-      isVisible={loginVisible}
-      onBackButtonPress={hideSelf}
-      backdropOpacity={1}
-      backdropColor={colors.primary}
-      coverScreen={true}>
-      <KeyboardAvoidingView
-        style={styles.keyboardAvoid}
-        behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
-        <View style={styles.container}>
-          <Illustration />
-          <Description />
-          <Form />
-          <TermsDescription />
-          <Text style={styles.btnCancel} onPress={handleOnCancel}>
-            Cancel
-          </Text>
-        </View>
-      </KeyboardAvoidingView>
-      <OTP />
-    </Modal>
+    <>
+      <Modal
+        useNativeDriver={true}
+        animationInTiming={500}
+        animationOut="fadeOut"
+        animationOutTiming={500}
+        isVisible={loginVisible}
+        onBackButtonPress={hideSelf}
+        backdropOpacity={1}
+        backdropColor={colors.primary}
+        style={styles.modal}
+        coverScreen={true}>
+        <ScrollView showsVerticalScrollIndicator={false}>
+          <View style={styles.container}>
+            <Illustration />
+            <View style={styles.content}>
+              <Description />
+              <Form />
+              <TermsDescription />
+              <Text style={styles.btnCancel} onPress={handleOnCancel}>
+                Cancel
+              </Text>
+            </View>
+          </View>
+        </ScrollView>
+        <OTP />
+      </Modal>
+    </>
   );
 }
 
