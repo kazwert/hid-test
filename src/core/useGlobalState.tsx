@@ -5,7 +5,7 @@ import {FlagType} from '../modules/Login/Login.interface';
 
 function useGlobalState(): UseGlobalState {
   const [phoneNumber, handlePhoneNumber] = React.useState('');
-  const [countryCode, handleCountryCode] = React.useState<FlagType>('id');
+  const [countryCode, handleCountryCode] = React.useState<FlagType>('us');
   const [permissionVisible, handlePermissionVisible] = React.useState(false);
   const [permissionIsContinue, handlePermissionIsContinue] = React.useState(false);
   const [loginVisible, handleLoginVisible] = React.useState(false);
@@ -19,7 +19,7 @@ function useGlobalState(): UseGlobalState {
 
     setTimeout(() => {
       handlePhoneNumber('');
-      handleCountryCode('id');
+      handleCountryCode('us');
       handlePermissionVisible(false);
       handlePermissionIsContinue(false);
       handleLoginVisible(false);

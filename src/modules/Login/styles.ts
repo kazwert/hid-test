@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
     width: '65%',
     height: '100%',
     marginHorizontal: 5,
-    ...Platform.OS === 'android' && { marginTop: -5 },
+    ...Platform.OS === 'android' && { marginTop: -4.5 },
     borderBottomWidth: 1,
     borderBottomColor: colors.white,
     paddingHorizontal: 10,

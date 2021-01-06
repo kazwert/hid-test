@@ -16,7 +16,7 @@ const Context = React.createContext<Context>({
   loginOTPRequest: () => {},
   phoneNumber: '',
   setPhoneNumber: () => {},
-  countryCode: 'id',
+  countryCode: 'us',
   setCountryCode: () => {},
   permissionVisible: false,
   setPermissionVisible: () => {},
