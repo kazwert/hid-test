@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@bobbyecho/react-native-humanid": ["./src/index"]
+      "@human-id/react-native-humanid": ["./src/index"]
     },
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,

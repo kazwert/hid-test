@@ -1,6 +1,6 @@
 {
-  "name": "@bobbyecho/react-native-humanid",
-  "version": "0.3.0",
+  "name": "@human-id/react-native-humanid",
+  "version": "1.0.0",
   "description": "HumanID for react-native",
   "license": "SEE LICENSE IN LISENCE",
   "private": false,
@@ -49,13 +49,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bobbyecho/react-native-humanid.git"
+    "url": "git+https://github.com/bluenumberfoundation/humanid-reactnative-sdk.git"
   },
-  "author": "bobbyecho",
+  "author": {
+    "name": "bluenumberfoundation",
+    "email": "developers@human-id.org",
+    "url": "https://nbs.co.id"
+  },
+  "contributors": [
+    "Bobby Echo (https://github.com/bobbyecho)"
+  ],
   "bugs": {
-    "url": "https://github.com/bobbyecho/react-native-humanid/issues"
+    "url": "https://github.com/bluenumberfoundation/humanid-reactnative-sdk/issues"
   },
-  "homepage": "https://github.com/bobbyecho/react-native-humanid#readme",
+  "homepage": "https://github.com/bluenumberfoundation/humanid-reactnative-sdk#readme",
   "devDependencies": {
     "@release-it/conventional-changelog": "^2.0.0",
     "@types/react": "^17.0.0",

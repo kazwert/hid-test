@@ -1,15 +1,15 @@
 
 <p align="center">  
-<img src="https://github.com/bobbyecho/react-native-humanid/blob/master/human-id-logo.png" width="200" height="200">  
+<img src="https://github.com/bluenumberfoundation/humanid-reactnative-sdk/master/human-id-logo.png" width="200" height="200">  
 </p>  
   
-<h1 align="center">humanID React Native</h1>  
+<h1 align="center">HumanID React Native</h1>  
   
 <p align="center">  
-  <a href="https://www.npmjs.com/package/@bobbyecho/react-native-humanid">  
-    <img src="https://badge.fury.io/js/%40bobbyecho%2Freact-native-humanid.svg" alt="npm version">  
+  <a href="https://www.npmjs.com/package/@human-id/react-native-humanid">  
+    <img src="https://badge.fury.io/js/%40human-id%2Freact-native-humanid.svg" alt="npm version">  
   </a>  
-  <a href="https://github.com/bobbyecho/react-native-humanid/blob/master/LICENSE">  
+  <a href="https://github.com/bluenumberfoundation/humanid-reactnative-sdk/blob/master/LICENSE">  
     <img src="https://img.shields.io/badge/License-GPL%20v3-blue.svg" alt="license" />  
   </a>  
 </p>  
@@ -34,11 +34,11 @@ Meet humanID - An anonymous online identity, enabling platforms to offer the spe
 ## Installation  
 ##### Yarn  
 ```
-yarn add react-native-humanid react-native-device-info  
+yarn add @human-id/react-native-humanid react-native-device-info  
 ```  
 ##### npm  
 ```  
-npm i react-native-humanid react-native-device-info  
+npm i @human-id/react-native-humanid react-native-device-info  
 ```
 
 ##### linking assets (IMPORTANT)
@@ -54,7 +54,7 @@ Get the appId and appSecret by dropping us an email [developers@human-id.org](ma
 at your index.js file  
   
 ```
-import {configureHumanID} from "react-native-humanid"  
+import {configureHumanID} from "@human-id/react-native-humanid"  
 import AppLogo from "path/your-app-logo"  
   
 configureHumanID({  
@@ -71,7 +71,7 @@ AppRegistry.registerComponent(appName, () => App)
   
 #### Register humanID Provider at your Top Container Application  
 ```
-import {HumanIDProvider} from "react-native-humanid"  
+import {HumanIDProvider} from "@human-id/react-native-humanid"  
   
 const App = () => {  
     return (
@@ -87,7 +87,7 @@ export default App
 #### Login  
   
 ```
-import {logIn} from "react-native-humanid"  
+import {logIn} from "@human-id/react-native-humanid"
   
 const HomeScreen = () => {  
     const handleLogin = () => {
@@ -104,7 +104,7 @@ export default HomeScreen
 We suggest put this method into lifecycle that only live once on your screen, example: <b>componentDidMount</b> if you use class component, otherwise you can use <b>useEffect</b>  
   
 ```
-import {onCancel, onSuccess, onError} from "react-native-humanid"  
+import {onCancel, onSuccess, onError} from "@human-id/react-native-humanid"  
   
 const HomeScreen = () => {  
     React.useEffect(() => {
@@ -124,7 +124,7 @@ export default HomeScreen
 ```  
   
 ## You're set!  
-Now you can integrate your React Native app to humanID. See the full [sample](https://github.com/bobbyecho/react-native-humanid/tree/example) here to learn more.  
+Now you can integrate your React Native app to humanID. See the full [sample](https://github.com/bluenumberfoundation/humanid-reactnative-sdk/tree/example) here to learn more.  
   
 ## License  
 Copyright 2019-2020 Bluenumber Foundation Licensed under the GNU General Public License v3.0
