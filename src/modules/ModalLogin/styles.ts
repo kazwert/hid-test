@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
   },
   container: {
     backgroundColor: colors.primary,
-    justifyContent: 'space-around',
+    justifyContent: 'space-evenly',
     alignItems: 'center',
     height: metrics.screenHeight * percentage,
     ...(globalStyles.containerModal as ViewStyle)
@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
     ...globalStyles.title,
     color: colors.white,
     fontWeight: 'bold',
-    marginTop: 25
+    marginVertical: 15
   },
   containerButton: {
     minHeight: 50,
