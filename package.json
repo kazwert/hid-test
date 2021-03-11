@@ -24,7 +24,7 @@
   "scripts": {
     "typescript": "tsc --noEmit",
     "prepare": "bob build",
-    "release": "release-it --dry-run"
+    "release": "release-it"
   },
   "keywords": [
     "react-native",
