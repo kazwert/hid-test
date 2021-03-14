@@ -52,7 +52,7 @@ Get the appId and appSecret by dropping us an email [developers@human-id.org](ma
 ## Configuration  
 at your index.js file  
   
-```
+```js
 import {configureHumanID} from "@human-id/react-native-humanid"  
 import AppLogo from "path/your-app-logo"  
   
@@ -60,7 +60,7 @@ configureHumanID({
     appName: "Your application NAme",
     clientSecret: "APP_SECRET",
     clientId: "APP_ID",
-    Icon: AppLogo (Icon is JSX.Element)
+    Icon: AppLogo // Icon is JSX.Element
 })  
   
 AppRegistry.registerComponent(appName, () => App)  
@@ -68,8 +68,9 @@ AppRegistry.registerComponent(appName, () => App)
   
 ## How to use  
   
-#### Register humanID Provider at your Top Container Application  
-```
+#### Register humanID Provider at your Top Container Application
+
+```js
 import {HumanIDProvider} from "@human-id/react-native-humanid"  
   
 const App = () => {  
@@ -85,7 +86,7 @@ export default App
   
 #### Login  
   
-```
+```js
 import {logIn} from "@human-id/react-native-humanid"
   
 const HomeScreen = () => {  
@@ -102,20 +103,32 @@ export default HomeScreen
 ####  Listener onSuccess, onError, onCancel  
 We suggest put this method into lifecycle that only live once on your screen, example: <b>componentDidMount</b> if you use class component, otherwise you can use <b>useEffect</b>  
   
-```
+```js
 import {onCancel, onSuccess, onError} from "@human-id/react-native-humanid"  
   
 const HomeScreen = () => {  
     React.useEffect(() => {
-        onSuccess((exchangeToken) => {
-            console.log("exchangeToken", exchangeToken)
-        })
-        onError((message) => {
-            console.log("error message", message)
-        })
-        onCancel(() => {
-            console.log("canceled")
-        })
+        const unsubscribeSuccess = () => onSuccess((exchangeToken) => {
+          console.log("exchangeToken", exchangeToken)
+        });
+    
+        const unsubscribeError = () => onError((message) => {
+          console.log("error message", message)
+        });
+    
+        const unsubscribeCancel = () => onCancel(() => {
+          console.log("canceled")
+        });
+    
+        unsubscribeSuccess();
+        unsubscribeError();
+        unsubscribeCancel();
+    
+        return () => {
+          unsubscribeSuccess();
+          unsubscribeError();
+          unsubscribeCancel();
+        }
     }, [])
 }  
  
