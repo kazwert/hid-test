@@ -1,12 +1,11 @@
 import React, {useContext} from 'react';
-import {KeyboardAvoidingView, Platform, View, ScrollView} from 'react-native';
+import {View, ScrollView} from 'react-native';
 import Modal from 'react-native-modal';
 import Header from '../Header';
 import styles from './styles';
 import Description from './Description';
 import Form from './Form';
 import {Context} from '../../core/Context';
-import {metrics} from '../../themes';
 
 function OTP(): JSX.Element {
   const {loginOTPVisible, setLoginOTPVisible} = useContext(Context);

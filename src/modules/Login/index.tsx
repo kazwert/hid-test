@@ -2,7 +2,6 @@ import React, {useContext} from 'react';
 import {View, Text, ScrollView} from 'react-native';
 import Modal from 'react-native-modal';
 import Header from '../Header';
-import OTP from '../OTP';
 import Logo from './Logo';
 import Description from './Description';
 import TermsDescription from './TermsDescription';
@@ -15,7 +14,6 @@ import {EventRegister, ON_CANCEL} from '../../core/eventManager';
 function Login(): JSX.Element {
   const {
     loginVisible,
-    setLoginVisible,
     clearState,
     resetReducer
   } = useContext(Context);

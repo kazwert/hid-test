@@ -1,4 +1,4 @@
-import {StyleSheet, ViewStyle} from 'react-native';
+import {StyleSheet} from 'react-native';
 import {colors, globalStyles, metrics} from '../../themes';
 import {RFPercentage, RFValue} from '../../helpers';
 

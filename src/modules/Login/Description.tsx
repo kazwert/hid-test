@@ -1,6 +1,5 @@
 import React from 'react';
 import {Text, View, Image} from 'react-native';
-import options from '../../core/options';
 import styles from './styles';
 import {images} from "../../themes";
 
