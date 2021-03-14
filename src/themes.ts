@@ -12,18 +12,20 @@ const colors = {
   primary: '#075070',
   orange: '#F4C464',
   white: '#FFFFFF',
-  gray: '#A2A2A2',
+  gray: '#333333',
+  grayDisable: '#A2A2A2',
   graySmooth: '#E0E0E0',
   gray400: '#BDBDBD',
-  black: '#333333'
+  black: '#333333',
+  background: '#E5E5E5'
 };
 
 const images = {
-  logoIcon: require('../assets/img/logo-icon.png'),
-  logoText: require('../assets/img/logo-text.png'),
-  logoOutline: require('../assets/img/logo-outline.png'),
-  logoLight: require('../assets/img/logo-light.png'),
-  arrowDown: require('../assets/img/arrow_down.png')
+  arrowDown: require('../assets/img/arrow_down.png'),
+  iconLock: require('../assets/img/lock.png'),
+  iconInfo: require('../assets/img/info.png'),
+  logoTextWhite: require('../assets/img/logoTextWhite.png'),
+  logoWhite: require('../assets/img/logoWhite.png')
 };
 
 const flags = {
@@ -283,13 +285,11 @@ const globalStyles = {
     padding: 25
   },
   containerModal: {
-    padding: 25,
-    width: metrics.screenWidth,
-    borderTopLeftRadius: 50,
-    borderTopRightRadius: 50
+    paddingHorizontal: 25,
+    width: metrics.screenWidth
   },
   title: {
-    fontSize: RFValue(16),
+    fontSize: RFValue(15),
     fontFamily: fonts.bold,
     letterSpacing: 1,
     lineHeight: 18

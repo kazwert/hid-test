@@ -51,6 +51,7 @@ export default class OTPInputView extends Component<
     if (this.timer) {
       clearInterval(this.timer);
     }
+
     this.keyboardDidHideListener?.remove();
   }
 

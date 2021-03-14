@@ -5,10 +5,6 @@ export interface UseGlobalState {
   setPhoneNumber: (number: string) => void;
   countryCode: FlagType;
   setCountryCode: (code: FlagType) => void;
-  permissionVisible: boolean;
-  setPermissionVisible: (visible: boolean) => void;
-  permissionIsContinue: boolean;
-  setPermissionIsContinue: (isContinue: boolean) => void;
   loginVisible: boolean;
   setLoginVisible: (visible: boolean) => void;
   loginOTPVisible: boolean;

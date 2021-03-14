@@ -1,6 +1,6 @@
 import React, {useReducer} from 'react';
-import ModalLogin from './ModalLogin';
 import Login from './Login';
+import OTP from './OTP';
 import {Context} from '../core/Context';
 import {checkClient} from '../helpers';
 import useGlobalState from '../core/useGlobalState';
@@ -21,10 +21,6 @@ const MainComponent: IMainComponent = (_props, ref): React.ReactElement => {
     setPhoneNumber,
     countryCode,
     setCountryCode,
-    permissionVisible,
-    setPermissionVisible,
-    permissionIsContinue,
-    setPermissionIsContinue,
     loginVisible,
     setLoginVisible,
     loginOTPVisible,
@@ -47,7 +43,7 @@ const MainComponent: IMainComponent = (_props, ref): React.ReactElement => {
   };
 
   React.useImperativeHandle(ref, () => ({
-    logIn: () => setPermissionVisible(true)
+    logIn: () => setLoginVisible(true)
   }));
 
   return (
@@ -61,18 +57,14 @@ const MainComponent: IMainComponent = (_props, ref): React.ReactElement => {
         setPhoneNumber,
         countryCode,
         setCountryCode,
-        permissionVisible,
-        setPermissionVisible,
-        permissionIsContinue,
-        setPermissionIsContinue,
         loginVisible,
         setLoginVisible,
         loginOTPVisible,
         setLoginOTPVisible,
         clearState
       }}>
-      <ModalLogin />
       <Login />
+      <OTP />
     </Context.Provider>
   );
 };

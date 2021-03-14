@@ -1,11 +1,12 @@
 import React, {useContext} from 'react';
-import {KeyboardAvoidingView, Platform, View} from 'react-native';
+import {KeyboardAvoidingView, Platform, View, ScrollView} from 'react-native';
 import Modal from 'react-native-modal';
-import Logo from './Logo';
+import Header from '../Header';
 import styles from './styles';
 import Description from './Description';
 import Form from './Form';
 import {Context} from '../../core/Context';
+import {metrics} from '../../themes';
 
 function OTP(): JSX.Element {
   const {loginOTPVisible, setLoginOTPVisible} = useContext(Context);
@@ -21,19 +22,16 @@ function OTP(): JSX.Element {
       isVisible={loginOTPVisible}
       backdropOpacity={0.3}
       onBackdropPress={hideSelf}
-      onBackButtonPress={hideSelf}>
-      <KeyboardAvoidingView
-        style={styles.keyboardAvoid}
-        behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-      >
+      onBackButtonPress={hideSelf}
+      coverScreen={true}
+    >
+      <ScrollView>
+        <Header />
         <View style={styles.container}>
-            <Logo />
-            <View style={styles.containerDescForm}>
-              <Description />
-              <Form />
-            </View>
+          <Description />
+          <Form />
         </View>
-      </KeyboardAvoidingView>
+      </ScrollView>
     </Modal>
   );
 }

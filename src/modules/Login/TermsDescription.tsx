@@ -1,6 +1,7 @@
 import React from 'react';
-import {Text, View, Linking} from 'react-native';
+import {Text, View, Linking, Image} from 'react-native';
 import styles from './styles';
+import {images} from '../../themes';
 
 function TermDescription(): JSX.Element {
   const openWeb = () => {
@@ -8,17 +9,14 @@ function TermDescription(): JSX.Element {
   }
 
   return (
-    <View>
-      <Text style={styles.termsText}>
-        humanID gives you back control over your privacy. The non profit
-        organization authenticates you without sharing your data or retaning
-        your data.
-      </Text>
-      <Text
-        onPress={openWeb}
-        style={[styles.learnMoreText, styles.textSpace]}
-      >
-        Learn More
+    <View style={styles.containerTerms}>
+      <Image
+        source={images.iconInfo}
+        style={styles.iconInfo}
+        resizeMode="contain"
+      />
+      <Text style={styles.termsText} onPress={openWeb}>
+        Learn more about our mission to restore privacy
       </Text>
     </View>
   );

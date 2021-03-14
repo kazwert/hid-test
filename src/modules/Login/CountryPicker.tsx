@@ -100,4 +100,4 @@ function CountryPicker(props: CountryPickerProps) {
   );
 }
 
-export default CountryPicker;
+export default React.memo(CountryPicker);

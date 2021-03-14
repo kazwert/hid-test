@@ -1,5 +1,5 @@
-import React, {useContext, useEffect} from 'react';
-import {Keyboard, TextInput, View} from 'react-native';
+import React, {useContext, useEffect, useRef} from 'react';
+import {Keyboard, TextInput, View, InteractionManager} from 'react-native';
 import CountryPicker from './CountryPicker';
 import Button from './Button';
 import styles from './styles';
@@ -14,10 +14,24 @@ function Form() {
     phoneNumber,
     setPhoneNumber,
     setLoginOTPVisible,
+    loginVisible,
     setCountryCode,
     countryCode,
     loginOTPRequest
   } = useContext(Context);
+
+  const inputRef = useRef();
+
+  useEffect(() => {
+    /**
+     * Focus keyboard when mounting
+     */
+    focusPhoneNumber();
+
+    return () => {
+      Keyboard.removeListener('keyboardDidHide', keyboardDidHide);
+    }
+  }, []);
 
   useEffect(() => {
     if (state.loginOTPPayload?.success) {
@@ -25,6 +39,20 @@ function Form() {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [state.loginOTPPayload]);
+
+  const focusPhoneNumber = () => {
+    if (loginVisible) {
+      InteractionManager.runAfterInteractions(() => {
+        setTimeout(() => inputRef.current?.focus(), 100)
+      });
+    }
+  }
+
+  const keyboardDidHide = () => {
+    if (loginVisible) {
+      inputRef.current?.blur();
+    }
+  }
 
   const handleChangeText = (text: string) => {
     if (isNaN(Number(text))) {
@@ -36,6 +64,7 @@ function Form() {
 
   const handleCountrySelected = (item: Country) => {
     setCountryCode(item.iso2);
+    focusPhoneNumber();
   };
 
   const handleSubmit = () => {
@@ -65,8 +94,11 @@ function Form() {
 
   return (
     <View style={styles.containerForm}>
-      <CountryPicker onSelected={handleCountrySelected} />
+      <CountryPicker
+        onSelected={handleCountrySelected}
+      />
       <TextInput
+        ref={inputRef}
         style={styles.textInput}
         keyboardType="phone-pad"
         onChangeText={handleChangeText}

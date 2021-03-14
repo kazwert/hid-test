@@ -1,16 +1,18 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import {Text, View, Image} from 'react-native';
 import options from '../../core/options';
 import styles from './styles';
+import {images} from "../../themes";
 
 function Description(): JSX.Element {
   return (
     <View style={styles.centerContent}>
-      <Text style={[styles.desc, styles.textSpace]}>
-        HumanID confirms your phone number without sharing it with {options.appName}
-      </Text>
-      <Text style={[styles.desc, styles.textSpace]}>
-        Your data is permanently deleted after verification.
+      <Image
+        style={styles.iconLock}
+        source={images.iconLock}
+      />
+      <Text style={styles.desc}>
+        Your phone number is deleted after verification
       </Text>
     </View>
   );

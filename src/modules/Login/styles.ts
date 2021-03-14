@@ -4,6 +4,12 @@ import {colors, globalStyles, metrics} from '../../themes';
 import {RFValue} from '../../helpers';
 
 const styles = StyleSheet.create({
+  appName: {
+    ...globalStyles.normal,
+    color: colors.gray,
+    marginVertical: 25,
+    textAlign: 'center'
+  },
   modal: {
     margin: 0,
     flex: 1
@@ -11,9 +17,8 @@ const styles = StyleSheet.create({
   container: {
     ...globalStyles.container,
     flex: 1,
-    height: metrics.screenHeight,
-    alignItems: 'center',
-    paddingHorizontal: 40
+    height: metrics.screenHeight - 78,
+    paddingHorizontal: 30
   },
   containerModal: {
     backgroundColor: colors.graySmooth,
@@ -23,8 +28,13 @@ const styles = StyleSheet.create({
   },
   content: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'space-around'
+    alignItems: 'center'
+  },
+  containerTerms: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    marginVertical: RFValue(20),
+    paddingHorizontal: RFValue(25)
   },
   illustration: {
     width: RFValue(120),
@@ -32,35 +42,34 @@ const styles = StyleSheet.create({
     ...isIphoneX() && { marginTop: 25 }
   },
   desc: {
-    ...globalStyles.normal,
-    color: colors.white,
-    textAlign: 'center'
+    ...globalStyles.description,
+    color: colors.gray
   },
   textSpace: {
     marginVertical: 10
   },
   termsText: {
     ...globalStyles.description,
-    color: colors.white,
-    textAlign: 'center'
+    color: colors.primary
   },
   learnMoreText: {
     ...globalStyles.descriptionBold,
-    color: colors.white,
+    color: colors.gray,
     textAlign: 'center',
     paddingVertical: 15,
     textDecorationLine: 'underline'
   },
   btnCancel: {
-    ...globalStyles.title,
-    color: colors.white
+    ...globalStyles.normal,
+    color: colors.gray,
+    marginTop: RFValue(20)
   },
   containerForm: {
     flexDirection: 'row',
-    alignItems: 'center',
     justifyContent: 'space-between',
-    marginVertical: RFValue(10),
-    paddingHorizontal: 25
+    alignItems: 'center',
+    paddingHorizontal: 40,
+    marginVertical: RFValue(25)
   },
   textInput: {
     width: '65%',
@@ -68,9 +77,9 @@ const styles = StyleSheet.create({
     marginHorizontal: 5,
     ...Platform.OS === 'android' && { marginTop: -4.5 },
     borderBottomWidth: 1,
-    borderBottomColor: colors.white,
+    borderBottomColor: colors.gray,
     paddingHorizontal: 10,
-    color: colors.white,
+    color: colors.gray,
     ...globalStyles.title,
     textAlign: 'center'
   },
@@ -82,16 +91,26 @@ const styles = StyleSheet.create({
     marginHorizontal: 5
   },
   btnEnter: {
-    backgroundColor: colors.orange
+    backgroundColor: colors.primary
   },
   btnEnterDisabled: {
-    backgroundColor: colors.gray
+    backgroundColor: colors.gray400
   },
   btnEnterText: {
-    ...globalStyles.title
+    ...globalStyles.descriptionBold,
+    textTransform: 'uppercase',
+    color: colors.white
+  },
+  btnEnterTextDisabled: {
+    ...globalStyles.descriptionBold,
+    textTransform: 'uppercase',
+    color: colors.grayDisable
   },
   centerContent: {
-    justifyContent: 'center'
+    flexDirection: 'row',
+    justifyContent: 'center',
+    marginVertical: RFValue(10),
+    paddingHorizontal: RFValue(25)
   },
   keyboardAvoid: {
     flex: 1
@@ -123,14 +142,14 @@ const styles = StyleSheet.create({
   },
   placeholderCountryCode: {
     ...globalStyles.title,
-    color: colors.white,
+    color: colors.gray,
     marginLeft: 5
   },
   containerInputCountryCode: {
     height: 40,
     flexDirection: 'row',
     alignItems: 'center',
-    borderBottomColor: colors.white,
+    borderBottomColor: colors.gray,
     borderBottomWidth: 1,
     paddingHorizontal: 5,
     ...Platform.OS === 'android' && { paddingBottom: 5 }
@@ -148,6 +167,22 @@ const styles = StyleSheet.create({
     width: 15,
     height: 15,
     marginLeft: 5
+  },
+  containerIconAppName: {
+    marginVertical: 10,
+    alignItems: 'center'
+  },
+  iconLock: {
+    width: RFValue(20),
+    height: RFValue(20),
+    marginRight: 10
+  },
+  iconInfo: {
+    marginTop: RFValue(2.5),
+    width: RFValue(15),
+    height: RFValue(15),
+    marginRight: 10,
+    resizeMode: 'contain'
   }
 });
 

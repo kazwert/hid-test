@@ -18,9 +18,11 @@ function Button(props: ButtonProps) {
       disabled={!enabled}
       onPress={onPress}>
       {state.loginOTPFetching ? (
-        <ActivityIndicator size="small" color={colors.black} />
+        <ActivityIndicator size="small" color={colors.white} />
       ) : (
-        <Text style={styles.btnEnterText}>Enter</Text>
+        <Text style={
+          enabled ? styles.btnEnterText : styles.btnEnterTextDisabled
+        }>Enter</Text>
       )}
     </TouchableOpacity>
   );

@@ -9,14 +9,13 @@ function Description(): JSX.Element {
 
   return (
     <View style={styles.containerDescription}>
-      <Text style={[styles.title, styles.textSpace]}>Verification Number</Text>
-      <Text style={[styles.description, styles.textSpace]}>
-        We just sent a text to (+{getDialCode(countryCode)}) {phoneNumber}. We will not save or forward this
-        number after the verification
-      </Text>
+      <Text style={[styles.title, styles.textSpace]}>Verify Your Phone Number</Text>
       <Text style={styles.description}>
-        Please enter the 4 digit code you received via SMS to
-        <Text style={styles.phoneNumber}> (+{getDialCode(countryCode)}) {phoneNumber}</Text>
+        Please enter the 4 digit code you received as SMS to
+      </Text>
+      <Text style={styles.phoneNumber}> +{getDialCode(countryCode)} {phoneNumber}</Text>
+      <Text style={[styles.description, styles.textSpace]}>
+        After successful verification, your number will be deleted permanently. Only a random identifier will be stored.
       </Text>
     </View>
   );

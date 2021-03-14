@@ -4,61 +4,49 @@ import {RFPercentage, RFValue} from '../../helpers';
 
 const styles = StyleSheet.create({
   modal: {
-    margin: 0,
-    width: metrics.screenWidth
-  },
-  logo: {
-    resizeMode: 'contain',
-    width: '100%',
-    height: RFValue(40),
-    alignSelf: 'center',
-    marginBottom: 25
-  },
-  keyboardAvoid: {
-    flex: 1,
-    justifyContent: 'flex-end'
+    margin: 0
   },
   container: {
+    ...globalStyles.containerModal,
     backgroundColor: colors.white,
-    height: metrics.screenHeight * 0.65,
-    ...(globalStyles.containerModal as ViewStyle)
-  },
-  containerDescForm: {
-    flex: 1
+    height: metrics.screenHeight - 78
   },
   title: {
     ...globalStyles.title,
-    textAlign: 'center'
+    textAlign: 'center',
+    color: colors.gray
   },
   description: {
-    ...globalStyles.normal,
-    textAlign: 'center'
+    ...globalStyles.description,
+    textAlign: 'center',
+    color: colors.gray
   },
   phoneNumber: {
     ...globalStyles.normalBold,
     color: colors.primary,
-    textAlign: 'center'
+    textAlign: 'center',
+    marginTop: 1
   },
   textSpace: {
-    marginVertical: 10
+    marginVertical: 25
   },
   resendCode: {
-    ...globalStyles.descriptionBold,
-    color: colors.gray
+    ...globalStyles.description,
+    marginTop: RFValue(80),
+    color: colors.primary
   },
   containerDescription: {
-    flex: 1,
-    justifyContent: 'space-around',
+    marginTop: RFValue(30),
+    paddingHorizontal: RFValue(25)
   },
   formContainer: {
-    flex: 1,
     alignItems: 'center',
-    justifyContent: 'space-around'
+    marginTop: RFValue(25)
   },
   otpView: {
     width: RFPercentage(50),
     height: 50,
-    paddingHorizontal: RFValue(20)
+    paddingHorizontal: RFValue(40)
   },
   otpFieldStyle: {
     width: 65,

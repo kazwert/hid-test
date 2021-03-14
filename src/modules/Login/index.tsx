@@ -1,8 +1,9 @@
 import React, {useContext} from 'react';
 import {View, Text, ScrollView} from 'react-native';
 import Modal from 'react-native-modal';
+import Header from '../Header';
 import OTP from '../OTP';
-import Illustration from './Illustration';
+import Logo from './Logo';
 import Description from './Description';
 import TermsDescription from './TermsDescription';
 import styles from './styles';
@@ -19,10 +20,6 @@ function Login(): JSX.Element {
     resetReducer
   } = useContext(Context);
 
-  const hideSelf = () => {
-    setLoginVisible(false);
-  };
-
   const handleOnCancel = () => {
     EventRegister.emitEvent(ON_CANCEL, true);
     resetReducer();
@@ -33,18 +30,20 @@ function Login(): JSX.Element {
     <>
       <Modal
         useNativeDriver={true}
-        animationInTiming={500}
+        animationInTiming={200}
+        animationOutTiming={200}
+        animationIn="bounceIn"
         animationOut="fadeOut"
-        animationOutTiming={500}
         isVisible={loginVisible}
-        onBackButtonPress={hideSelf}
+        onBackButtonPress={handleOnCancel}
         backdropOpacity={1}
-        backdropColor={colors.primary}
+        backdropColor={colors.white}
         style={styles.modal}
         coverScreen={true}>
         <ScrollView showsVerticalScrollIndicator={false}>
+          <Header />
           <View style={styles.container}>
-            <Illustration />
+            <Logo />
             <View style={styles.content}>
               <Description />
               <Form />
@@ -55,7 +54,6 @@ function Login(): JSX.Element {
             </View>
           </View>
         </ScrollView>
-        <OTP />
       </Modal>
     </>
   );

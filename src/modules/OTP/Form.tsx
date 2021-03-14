@@ -3,7 +3,7 @@ import OTPInputView from './OTPInput';
 import {View, Text, ActivityIndicator} from 'react-native';
 import styles from './styles';
 import {Context} from '../../core/Context';
-import {getDialCode} from '../../helpers';
+import {getDialCode, otpTimerFormat} from '../../helpers';
 import {getUniqueId} from 'react-native-device-info';
 import {EventRegister, ON_SUCCESS} from '../../core/eventManager';
 import {colors} from '../../themes';
@@ -60,7 +60,7 @@ function Form(): JSX.Element {
       EventRegister.emitEvent(ON_SUCCESS, exchangeToken);
       clearState();
       resetReducer();
-    } else if (!state.loginPayload?.success) {
+    } else if (state.loginPayload && !state.loginPayload?.success) {
       setTimeout(() => {
         otpRef.current?.bringUpKeyBoardIfNeeded();
       }, 500);
@@ -104,7 +104,7 @@ function Form(): JSX.Element {
           style={styles.resendCode}
           onPress={timer === 0 ? handleResendCode : () => null}>
           {timer !== 0
-            ? `Resend code in ${timer}`
+            ? `Resend code in ${otpTimerFormat(timer)}`
             : 'Click here to resend code'}
         </Text>
       )}
