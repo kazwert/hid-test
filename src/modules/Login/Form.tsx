@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, createRef} from 'react';
+import React, {RefObject, useContext, useEffect, useRef} from 'react';
 import {Keyboard, TextInput, View, InteractionManager} from 'react-native';
 import CountryPicker from './CountryPicker';
 import Button from './Button';
@@ -20,7 +20,7 @@ function Form() {
     loginOTPRequest
   } = useContext(Context);
 
-  const inputRef = createRef<TextInput>();
+  const inputRef = useRef<TextInput>();
 
   useEffect(() => {
     /**
@@ -98,7 +98,7 @@ function Form() {
         onSelected={handleCountrySelected}
       />
       <TextInput
-        ref={inputRef}
+        ref={inputRef as RefObject<TextInput>}
         style={styles.textInput}
         keyboardType="phone-pad"
         onChangeText={handleChangeText}
