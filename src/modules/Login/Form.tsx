@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useRef} from 'react';
+import React, {useContext, useEffect, createRef} from 'react';
 import {Keyboard, TextInput, View, InteractionManager} from 'react-native';
 import CountryPicker from './CountryPicker';
 import Button from './Button';
@@ -20,7 +20,7 @@ function Form() {
     loginOTPRequest
   } = useContext(Context);
 
-  const inputRef = useRef();
+  const inputRef = createRef<TextInput>();
 
   useEffect(() => {
     /**
