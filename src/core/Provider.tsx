@@ -3,7 +3,9 @@ import MainComponent from '../modules/MainComponent';
 import {IHumanIDProvider, MainComponentRef} from './core.interface';
 
 const Provider: IHumanIDProvider = (): JSX.Element => {
-  return <MainComponent ref={registerRef} />;
+  return (
+    <MainComponent ref={registerRef} />
+  );
 };
 
 Provider.ref = null;

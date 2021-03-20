@@ -3,9 +3,9 @@ import {RFValue} from './helpers';
 const {width, height} = Dimensions.get('window');
 
 const fonts = {
-  base: 'Lato-Regular',
-  bold: 'Lato-Bold',
-  thin: 'Lato-Thin'
+  base: 'Roboto-Regular',
+  bold: 'Roboto-Bold',
+  thin: 'Roboto-Light'
 };
 
 const colors = {

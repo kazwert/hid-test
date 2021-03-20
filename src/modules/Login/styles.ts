@@ -1,11 +1,11 @@
 import {StyleSheet, Platform} from 'react-native';
 import {isIphoneX} from 'react-native-iphone-x-helper';
 import {colors, globalStyles, metrics} from '../../themes';
-import {RFValue} from '../../helpers';
+import {RFValue, RFPercentage} from '../../helpers';
 
 const styles = StyleSheet.create({
   appName: {
-    ...globalStyles.normal,
+    ...globalStyles.normalBold,
     color: colors.gray,
     marginVertical: 25,
     textAlign: 'center'
@@ -34,7 +34,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     marginVertical: RFValue(20),
-    paddingHorizontal: RFValue(25)
+    paddingLeft: RFValue(15),
+    paddingRight: RFPercentage(15)
   },
   illustration: {
     width: RFValue(120),
@@ -62,7 +63,7 @@ const styles = StyleSheet.create({
   btnCancel: {
     ...globalStyles.normal,
     color: colors.gray,
-    marginTop: RFValue(20)
+    marginTop: RFValue(30)
   },
   containerForm: {
     flexDirection: 'row',
@@ -86,7 +87,7 @@ const styles = StyleSheet.create({
   btnContainer: {
     height: 40,
     paddingVertical: 10,
-    paddingHorizontal: 10,
+    paddingHorizontal: 15,
     borderRadius: 4,
     marginHorizontal: 5
   },
@@ -110,7 +111,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     marginVertical: RFValue(10),
-    paddingHorizontal: RFValue(25)
+    paddingHorizontal: RFValue(15)
   },
   keyboardAvoid: {
     flex: 1
@@ -175,14 +176,16 @@ const styles = StyleSheet.create({
   iconLock: {
     width: RFValue(20),
     height: RFValue(20),
-    marginRight: 10
+    marginRight: 10,
+    alignSelf: 'center'
   },
   iconInfo: {
     marginTop: RFValue(2.5),
     width: RFValue(15),
     height: RFValue(15),
     marginRight: 10,
-    resizeMode: 'contain'
+    resizeMode: 'contain',
+    alignSelf: 'center'
   }
 });
 

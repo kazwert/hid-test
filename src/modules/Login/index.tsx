@@ -30,7 +30,7 @@ function Login(): JSX.Element {
         useNativeDriver={true}
         animationInTiming={200}
         animationOutTiming={200}
-        animationIn="bounceIn"
+        animationIn="slideInUp"
         animationOut="fadeOut"
         isVisible={loginVisible}
         onBackButtonPress={handleOnCancel}
@@ -38,7 +38,7 @@ function Login(): JSX.Element {
         backdropColor={colors.white}
         style={styles.modal}
         coverScreen={true}>
-        <ScrollView showsVerticalScrollIndicator={false}>
+        <ScrollView showsVerticalScrollIndicator={false} keyboardShouldPersistTaps="handled">
           <Header />
           <View style={styles.container}>
             <Logo />

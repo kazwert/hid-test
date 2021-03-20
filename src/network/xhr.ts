@@ -25,7 +25,10 @@ export default async function xhr<T, R>(
   } catch {}
 
   if (!response.ok && response.parsedBody) {
-    throw new Error(response.parsedBody.message);
+    throw ({
+      message: response.parsedBody.message,
+      code: response.parsedBody.code
+    });
   }
 
   return response.parsedBody!;

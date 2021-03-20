@@ -30,6 +30,29 @@ export function getCountry(countryCode: FlagType) {
   return countries[countryCode];
 }
 
+export function formatPhoneInternational(
+  numberProto: { country_code: string, national_number: string }
+): string | null {
+  if (!numberProto?.country_code || !numberProto?.national_number) return null;
+
+  const {country_code, national_number} = numberProto;
+
+  const PNF = require('google-libphonenumber').PhoneNumberFormat;
+  const phoneNumberLib = require('google-libphonenumber');
+  const phoneUtil = phoneNumberLib.PhoneNumberUtil.getInstance();
+
+  const number = phoneUtil.parseAndKeepRawInput(national_number, country_code);
+
+
+  /**
+   * E164: 0,
+   * INTERNATIONAL: 1,
+   * NATIONAL: 2,
+   * RFC3966: 3
+   */
+  return phoneUtil.format(number, PNF.INTERNATIONAL).replace(/-/g, ' ');
+}
+
 const { height, width } = Dimensions.get('window');
 const standardLength = width > height ? width : height;
 

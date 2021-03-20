@@ -7,7 +7,8 @@ const styles = StyleSheet.create({
     margin: 0
   },
   container: {
-    ...globalStyles.containerModal,
+    paddingHorizontal: 10,
+    width: metrics.screenWidth,
     backgroundColor: colors.white,
     height: metrics.screenHeight - 78
   },
@@ -19,7 +20,14 @@ const styles = StyleSheet.create({
   description: {
     ...globalStyles.description,
     textAlign: 'center',
-    color: colors.gray
+    color: colors.gray,
+    paddingHorizontal: 25
+  },
+  descriptionBottom: {
+    ...globalStyles.description,
+    textAlign: 'center',
+    color: colors.gray,
+    paddingHorizontal: 5
   },
   phoneNumber: {
     ...globalStyles.normalBold,
@@ -32,32 +40,40 @@ const styles = StyleSheet.create({
   },
   resendCode: {
     ...globalStyles.description,
-    marginTop: RFValue(80),
-    color: colors.primary
+    marginTop: RFValue(40),
+    color: colors.primary,
+    alignSelf: 'flex-start',
+    paddingLeft: RFValue(30)
   },
   containerDescription: {
     marginTop: RFValue(30),
-    paddingHorizontal: RFValue(25)
+    paddingHorizontal: RFValue(15)
   },
   formContainer: {
     alignItems: 'center',
     marginTop: RFValue(25)
   },
   otpView: {
-    width: RFPercentage(50),
+    width: RFPercentage(45),
     height: 50,
-    paddingHorizontal: RFValue(40)
+    paddingHorizontal: RFValue(10)
   },
   otpFieldStyle: {
-    width: 65,
+    width: RFValue(70),
     height: 50,
     ...globalStyles.otpText,
     color: colors.black,
     borderWidth: 0,
-    borderBottomWidth: 3,
-    borderBottomColor: colors.gray
+    borderBottomWidth: 2,
+    borderBottomColor: colors.graySmooth
   },
   otpHighlightStyle: {
+    width: RFValue(70),
+    height: 50,
+    ...globalStyles.otpText,
+    color: colors.primary,
+    borderWidth: 0,
+    borderBottomWidth: 2,
     borderBottomColor: colors.primary
   }
 });

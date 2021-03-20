@@ -30,7 +30,7 @@ export interface Options {
 
 type onCancelCallback = () => void;
 
-type onErrorCallback = (message: string) => void;
+type onErrorCallback = () => void;
 
 type onSuccessCallback = (exchangeToken: string) => void;
 

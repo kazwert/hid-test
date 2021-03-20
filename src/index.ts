@@ -8,6 +8,7 @@ import {
 import {EventRegister, ON_CANCEL, ON_ERROR, ON_SUCCESS} from './core/eventManager';
 import options from './core/options';
 import HumanIDProvider from './core/Provider';
+import Toast from './modules/Toast'
 
 const configureHumanID: IConfigureHumanID = (params) => {
   const {appName, clientId, clientSecret, Icon = null} = params;
@@ -33,15 +34,17 @@ const onCancel: IOnCancel = (callback) => {
 const onSuccess: IOnSuccess = (callback) => {
   EventRegister.addEventListener(ON_SUCCESS, (exchangeToken: string) => {
     if (exchangeToken) {
+      Toast.show('You’ve successfully logged in. Your data has been securely erased.', 6000);
       callback(exchangeToken);
     }
   });
 };
 
 const onError: IOnError = (callback) => {
-  EventRegister.addEventListener(ON_ERROR, (message: string) => {
-    if (message) {
-      callback(message);
+  EventRegister.addEventListener(ON_ERROR, (error: string) => {
+    if (error) {
+      Toast.show(error, 4000);
+      callback();
     }
   });
 };

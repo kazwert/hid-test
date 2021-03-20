@@ -15,6 +15,12 @@ const catchErrorMessage = (e: any) => {
   return e?.message || e;
 };
 
+const catchErrorMessageRequestOTP = (e: any) => {
+  if (e?.code !== '401') return 'Unable to request otp at this time. Please try again later';
+
+  return e?.message || e;
+};
+
 export async function postLoginOTP(
   params: LoginOTPRequest
 ): Promise<NetworkResponse<LoginOTPResponse>> {
@@ -26,8 +32,8 @@ export async function postLoginOTP(
 
     return {...response};
   } catch (e) {
-    EventRegister.emitEvent(ON_ERROR, catchErrorMessage(e));
-    return defaultError(catchErrorMessage(e));
+    EventRegister.emitEvent(ON_ERROR, catchErrorMessageRequestOTP(e));
+    return defaultError(catchErrorMessageRequestOTP(e));
   }
 }
 

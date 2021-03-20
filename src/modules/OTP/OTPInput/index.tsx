@@ -167,7 +167,7 @@ export default class OTPInputView extends Component<
       keyboardAppearance
     } = this.props;
     const {defaultTextFieldStyle} = styles;
-    const {selectedIndex, digits} = this.state;
+    const {digits} = this.state;
     const {
       clearInputs,
       placeholderCharacter,
@@ -182,15 +182,10 @@ export default class OTPInputView extends Component<
         <TextInput
           testID="textInput"
           underlineColorAndroid="rgba(0,0,0,0)"
-          style={
-            selectedIndex === index
-              ? [
-                  defaultTextFieldStyle,
-                  codeInputFieldStyle,
-                  codeInputHighlightStyle
-                ]
-              : [defaultTextFieldStyle, codeInputFieldStyle]
-          }
+          style={[
+            defaultTextFieldStyle,
+            digits?.[index] ? codeInputHighlightStyle  : codeInputFieldStyle
+          ]}
           ref={(ref) => {
             this.fields[index] = ref;
           }}

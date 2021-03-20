@@ -104,7 +104,7 @@ function Form() {
         onChangeText={handleChangeText}
         value={phoneNumber}
         placeholder="Phone Number"
-        placeholderTextColor={colors.white}
+        placeholderTextColor={colors.graySmooth}
         maxLength={15}
       />
       <Button enabled={isSubmitEnabled()} onPress={handleSubmit} />
