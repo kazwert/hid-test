@@ -53,17 +53,17 @@ Get the appId and appSecret by dropping us an email [developers@human-id.org](ma
 at your index.js file  
   
 ```js
-import {configureHumanID} from "@human-id/react-native-humanid"  
-import AppLogo from "path/your-app-logo"  
+import {configureHumanID} from "@human-id/react-native-humanid";  
+import AppLogo from "path/your-app-logo";
   
 configureHumanID({  
     appName: "Your application NAme",
     clientSecret: "APP_SECRET",
     clientId: "APP_ID",
     Icon: AppLogo // Icon is JSX.Element
-})  
+});
   
-AppRegistry.registerComponent(appName, () => App)  
+AppRegistry.registerComponent(appName, () => App);  
 ```  
   
 ## How to use  
@@ -71,40 +71,40 @@ AppRegistry.registerComponent(appName, () => App)
 #### Register humanID Provider at your Top Container Application
 
 ```js
-import {HumanIDProvider} from "@human-id/react-native-humanid"  
+import {HumanIDProvider} from "@human-id/react-native-humanid";
   
-const App = () => {  
+const App = () => {
     return (
         <View>
             <HumanIDProvider />
         </View>
-    )
-}  
+    );
+};
   
-export default App  
+export default App; 
 ```  
   
 #### Login  
   
 ```js
-import {logIn} from "@human-id/react-native-humanid"
+import {logIn} from "@human-id/react-native-humanid";
   
 const HomeScreen = () => {  
     const handleLogin = () => {
-        logIn()
-    }
+        logIn();
+    };
     
-    return <Button title="Login" onPress={handleLogin} />
+    return <Button title="Login" onPress={handleLogin} />;
 }  
   
-export default HomeScreen  
+export default HomeScreen;  
 ```  
   
 ####  Listener onSuccess, onError, onCancel  
 We suggest put this method into lifecycle that only live once on your screen, example: <b>componentDidMount</b> if you use class component, otherwise you can use <b>useEffect</b>  
   
 ```js
-import {onCancel, onSuccess, onError} from "@human-id/react-native-humanid"  
+import {onCancel, onSuccess, onError} from "@human-id/react-native-humanid";  
   
 const HomeScreen = () => {  
     React.useEffect(() => {
@@ -112,8 +112,8 @@ const HomeScreen = () => {
           console.log("exchangeToken", exchangeToken)
         });
     
-        const unsubscribeError = () => onError((message) => {
-          console.log("error message", message)
+        const unsubscribeError = () => onError(() => {
+          console.log("error")
         });
     
         const unsubscribeCancel = () => onCancel(() => {
@@ -129,10 +129,10 @@ const HomeScreen = () => {
           unsubscribeError();
           unsubscribeCancel();
         }
-    }, [])
+    }, []);
 }  
  
-export default HomeScreen  
+export default HomeScreen;
 ```  
 
 ## You're set!
