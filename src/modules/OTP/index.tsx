@@ -5,10 +5,15 @@ import Header from '../Header';
 import styles from './styles';
 import Description from './Description';
 import Form from './Form';
+import ModalLoading from './ModalLoading';
 import {Context} from '../../core/Context';
 
 function OTP(): JSX.Element {
-  const {loginOTPVisible, setLoginOTPVisible} = useContext(Context);
+  const {
+    loginOTPVisible,
+    setLoginOTPVisible,
+    state
+  } = useContext(Context);
 
   const hideSelf = () => {
     setLoginOTPVisible(false);
@@ -30,6 +35,7 @@ function OTP(): JSX.Element {
           <Description />
           <Form />
         </View>
+        <ModalLoading visible={state.loginFetching} />
       </ScrollView>
     </Modal>
   );

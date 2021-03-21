@@ -98,7 +98,7 @@ function Form(): JSX.Element {
         editable={!state.loginFetching}
       />
       {state.loginOTPFetching ? (
-        <ActivityIndicator size="small" color={colors.gray} />
+        <ActivityIndicator style={styles.resendActivity} size="small" color={colors.primary} />
       ) : (
         <Text
           style={styles.resendCode}

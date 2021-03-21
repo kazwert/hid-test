@@ -26,6 +26,13 @@ const styles = StyleSheet.create({
     height: metrics.screenHeight / 1.5,
     borderRadius: 6
   },
+  modalCountryPicker: {
+    backgroundColor: colors.white,
+    width: metrics.screenWidth,
+    height: metrics.screenHeight,
+    margin: 0,
+    justifyContent: 'flex-start'
+  },
   content: {
     flex: 1,
     alignItems: 'center'
@@ -81,8 +88,7 @@ const styles = StyleSheet.create({
     borderBottomColor: colors.gray,
     paddingHorizontal: 10,
     color: colors.gray,
-    ...globalStyles.title,
-    textAlign: 'center'
+    ...globalStyles.title
   },
   btnContainer: {
     height: 40,
@@ -118,16 +124,18 @@ const styles = StyleSheet.create({
   },
   iconFlag: {
     width: 25,
-    height: 25
+    height: 30
   },
   countryText: {
+    ...globalStyles.description,
     flex: 1,
     textAlign: 'center',
     paddingHorizontal: 20,
     fontWeight: '600'
   },
   countryCodeText: {
-    ...globalStyles.normalBold,
+    ...globalStyles.descriptionBold,
+    fontWeight: 'bold',
     color: colors.gray
   },
   itemFlag: {
@@ -139,7 +147,7 @@ const styles = StyleSheet.create({
   },
   separator: {
     height: 1,
-    backgroundColor: colors.gray400
+    backgroundColor: colors.graySmooth
   },
   placeholderCountryCode: {
     ...globalStyles.title,
@@ -164,6 +172,16 @@ const styles = StyleSheet.create({
     marginVertical: 25,
     ...globalStyles.title
   },
+  txInputCountrySearch: {
+    flex: 1,
+    backgroundColor: colors.graySmooth,
+    borderRadius: 6,
+    marginTop: 20,
+    paddingHorizontal: 15,
+    marginBottom: 10,
+    marginHorizontal: 15,
+    ...globalStyles.normal
+  },
   arrowDown: {
     width: 15,
     height: 15,
@@ -186,6 +204,22 @@ const styles = StyleSheet.create({
     marginRight: 10,
     resizeMode: 'contain',
     alignSelf: 'center'
+  },
+  textCountryNotFound: {
+    ...globalStyles.description,
+    marginTop: RFPercentage(5),
+    alignSelf: 'center'
+  },
+  containertxInputSearchCountry: {
+    paddingHorizontal: 15,
+    flexDirection: 'row'
+  },
+  iconClose: {
+    resizeMode: 'contain',
+    width: 25,
+    height: 25,
+    alignSelf: 'center',
+    marginTop: 7.5
   }
 });
 

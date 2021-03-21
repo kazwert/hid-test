@@ -25,7 +25,8 @@ const images = {
   iconLock: require('../assets/img/lock.png'),
   iconInfo: require('../assets/img/info.png'),
   logoTextWhite: require('../assets/img/logoTextWhite.png'),
-  logoWhite: require('../assets/img/logoWhite.png')
+  logoWhite: require('../assets/img/logoWhite.png'),
+  iconClose: require('../assets/img/iconClose.png')
 };
 
 const flags = {

@@ -45,6 +45,10 @@ const styles = StyleSheet.create({
     alignSelf: 'flex-start',
     paddingLeft: RFValue(30)
   },
+  resendActivity: {
+    marginTop: RFValue(40),
+    alignSelf: 'center',
+  },
   containerDescription: {
     marginTop: RFValue(30),
     paddingHorizontal: RFValue(15)
@@ -75,6 +79,19 @@ const styles = StyleSheet.create({
     borderWidth: 0,
     borderBottomWidth: 2,
     borderBottomColor: colors.primary
+  },
+  containerModalLoading: {
+    flexDirection: 'row',
+    paddingVertical: 25,
+    marginHorizontal: 40,
+    paddingHorizontal: 25,
+    backgroundColor: 'white',
+    borderRadius: 12
+  },
+  textLoading: {
+    ...globalStyles.normal,
+    alignSelf: 'center',
+    marginLeft: 10
   }
 });
 

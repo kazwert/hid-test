@@ -43,7 +43,7 @@ function Form() {
   const focusPhoneNumber = () => {
     if (loginVisible) {
       InteractionManager.runAfterInteractions(() => {
-        setTimeout(() => inputRef.current?.focus(), 100)
+        setTimeout(() => inputRef.current?.focus(), 100);
       });
     }
   }
@@ -63,8 +63,14 @@ function Form() {
   };
 
   const handleCountrySelected = (item: Country) => {
-    setCountryCode(item.iso2);
-    focusPhoneNumber();
+    setTimeout(() => {
+      Keyboard.dismiss();
+    }, 0)
+
+    setTimeout(() => {
+      setCountryCode(item.iso2);
+      focusPhoneNumber();
+    }, 100)
   };
 
   const handleSubmit = () => {
@@ -96,6 +102,7 @@ function Form() {
     <View style={styles.containerForm}>
       <CountryPicker
         onSelected={handleCountrySelected}
+        onCountryPickerShow={keyboardDidHide}
       />
       <TextInput
         ref={inputRef as RefObject<TextInput>}

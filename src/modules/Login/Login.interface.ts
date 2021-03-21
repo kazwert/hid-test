@@ -7,6 +7,7 @@ export interface ButtonProps {
 
 export interface CountryPickerProps {
   onSelected: (country: Country) => void;
+  onCountryPickerShow: () => void;
 }
 
 export type FlagType = keyof typeof flags;
@@ -21,4 +22,9 @@ export interface Country {
   dialCode: string;
   priority: number;
   areaCodes?: [] | null;
+}
+
+export interface SearchCountryInputProps {
+  onChangeText: (country: string) => void;
+  onCancel: () => void;
 }
