@@ -41,7 +41,7 @@ function Form() {
   }, [state.loginOTPPayload]);
 
   React.useEffect(() => {
-    inputRef.current.setNativeProps({
+    inputRef.current?.setNativeProps({
       style: phoneNumber?.length ? styles.phoneOnTyping : styles.placeholder
     });
   }, [phoneNumber])
@@ -117,7 +117,6 @@ function Form() {
         onChangeText={handleChangeText}
         value={phoneNumber}
         placeholder="Phone Number"
-        placeholderStyle={styles.placeholder}
         maxLength={15}
         selectionColor={colors.gray}
       />
