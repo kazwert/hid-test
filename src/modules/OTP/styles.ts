@@ -74,7 +74,8 @@ const styles = StyleSheet.create({
     color: colors.black,
     borderWidth: 0,
     borderBottomWidth: 0.5,
-    borderBottomColor: colors.borderLine
+    borderBottomColor: colors.borderLine,
+    paddingBottom: -20
   },
   otpHighlightStyle: {
     width: RFValue(65),
@@ -83,7 +84,8 @@ const styles = StyleSheet.create({
     color: colors.black,
     borderWidth: 0,
     borderBottomWidth: 0.5,
-    borderBottomColor: colors.primary
+    borderBottomColor: colors.primary,
+    paddingBottom: -20
   },
   containerModalLoading: {
     flexDirection: 'row',
