@@ -187,7 +187,7 @@ const styles = StyleSheet.create({
     borderBottomColor: colors.borderLine,
     borderBottomWidth: 0.5,
     paddingHorizontal: 5,
-    bottom: 0.6
+    bottom: 0.2
   },
   btnCancelCountryPicker: {
     textAlign: 'center',
