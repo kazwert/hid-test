@@ -12,18 +12,18 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   logo: {
-    width: RFValue(30),
-    height: RFValue(30),
+    width: RFValue(29),
+    height: RFValue(32),
     marginHorizontal: RFValue(10)
   },
   logoText: {
-    width: RFValue(70),
-    height: RFValue(25),
+    width: RFValue(80),
+    height: RFValue(28),
     marginHorizontal: RFValue(7.5),
     marginTop: RFValue(-1)
   },
   text: {
-    ...globalStyles.normal,
+    ...globalStyles.headerTitle,
     color: colors.white
   }
 });

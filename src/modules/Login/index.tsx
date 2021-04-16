@@ -46,9 +46,6 @@ function Login(): JSX.Element {
               <Description />
               <Form />
               <TermsDescription />
-              <Text style={styles.btnCancel} onPress={handleOnCancel}>
-                Cancel
-              </Text>
             </View>
           </View>
         </ScrollView>

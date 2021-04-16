@@ -40,6 +40,12 @@ function Form() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [state.loginOTPPayload]);
 
+  React.useEffect(() => {
+    inputRef.current.setNativeProps({
+      style: phoneNumber?.length ? styles.phoneOnTyping : styles.placeholder
+    });
+  }, [phoneNumber])
+
   const focusPhoneNumber = () => {
     if (loginVisible) {
       InteractionManager.runAfterInteractions(() => {
@@ -111,8 +117,9 @@ function Form() {
         onChangeText={handleChangeText}
         value={phoneNumber}
         placeholder="Phone Number"
-        placeholderTextColor={colors.graySmooth}
+        placeholderStyle={styles.placeholder}
         maxLength={15}
+        selectionColor={colors.gray}
       />
       <Button enabled={isSubmitEnabled()} onPress={handleSubmit} />
     </View>

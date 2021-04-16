@@ -15,9 +15,14 @@ function TermDescription(): JSX.Element {
         style={styles.iconInfo}
         resizeMode="contain"
       />
-      <Text style={styles.termsText} onPress={openWeb}>
-        Learn more about our mission to restore privacy
-      </Text>
+      <View style={styles.containerTermsText}>
+        <Text style={styles.termsText} onPress={openWeb}>
+          Learn more about our
+        </Text>
+        <Text style={styles.termsText} onPress={openWeb}>
+          mission to restore privacy
+        </Text>
+      </View>
     </View>
   );
 }

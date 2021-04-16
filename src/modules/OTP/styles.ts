@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {colors, globalStyles, metrics} from '../../themes';
+import {colors, globalStyles, metrics, fonts} from '../../themes';
 import {RFPercentage, RFValue} from '../../helpers';
 
 const styles = StyleSheet.create({
@@ -7,77 +7,82 @@ const styles = StyleSheet.create({
     margin: 0
   },
   container: {
-    paddingHorizontal: 10,
     width: metrics.screenWidth,
     backgroundColor: colors.white,
     height: metrics.screenHeight - 78
   },
   title: {
-    ...globalStyles.title,
+    fontFamily: fonts.latoBold,
+    fontSize: 18,
     textAlign: 'center',
     color: colors.gray
   },
   description: {
-    ...globalStyles.description,
+    fontFamily: fonts.montserratRegular,
+    fontSize: 14,
     textAlign: 'center',
     color: colors.gray,
     paddingHorizontal: 25
   },
   descriptionBottom: {
-    ...globalStyles.description,
+    fontFamily: fonts.montserratRegular,
+    fontSize: 14,
     textAlign: 'center',
-    color: colors.gray,
-    paddingHorizontal: 5
+    color: colors.gray
   },
   phoneNumber: {
-    ...globalStyles.normalBold,
+    fontFamily: fonts.montserratMedium,
     color: colors.primary,
     textAlign: 'center',
-    marginTop: 1
+    marginTop: 1.5
   },
-  textSpace: {
-    marginVertical: 25
+  textSpace28: {
+    marginBottom: 28
+  },
+  textSpace21: {
+    marginBottom: 21
   },
   resendCode: {
-    ...globalStyles.description,
-    marginTop: RFValue(40),
+    fontFamily: fonts.montserratRegular,
+    fontSize: 14,
+    marginTop: RFValue(27.5),
     color: colors.primary,
     alignSelf: 'flex-start',
-    paddingLeft: RFValue(30)
+    paddingLeft: RFValue(25)
   },
   resendActivity: {
-    marginTop: RFValue(40),
+    marginTop: RFValue(27.5),
     alignSelf: 'center',
   },
   containerDescription: {
-    marginTop: RFValue(30),
-    paddingHorizontal: RFValue(15)
+    marginTop: RFValue(85)
   },
   formContainer: {
     alignItems: 'center',
-    marginTop: RFValue(25)
+    marginTop: 44,
+    marginBottom: 25
   },
   otpView: {
     width: RFPercentage(45),
     height: 50,
-    paddingHorizontal: RFValue(10)
+    paddingHorizontal: RFValue(15)
   },
   otpFieldStyle: {
-    width: RFValue(70),
+    width: RFValue(65),
     height: 50,
     ...globalStyles.otpText,
     color: colors.black,
     borderWidth: 0,
-    borderBottomWidth: 2,
-    borderBottomColor: colors.graySmooth
+    borderBottomWidth: 0.5,
+    borderBottomColor: colors.borderLine
   },
   otpHighlightStyle: {
-    width: RFValue(70),
+    width: RFValue(65),
     height: 50,
     ...globalStyles.otpText,
-    color: colors.primary,
+    color: colors.black,
     borderWidth: 0,
-    borderBottomWidth: 2,
+    borderBottomWidth: 0.5,
     borderBottomColor: colors.primary
   },
   containerModalLoading: {

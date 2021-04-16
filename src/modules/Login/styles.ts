@@ -1,14 +1,22 @@
 import {StyleSheet, Platform} from 'react-native';
 import {isIphoneX} from 'react-native-iphone-x-helper';
-import {colors, globalStyles, metrics} from '../../themes';
+import {colors, globalStyles, metrics, fonts} from '../../themes';
 import {RFValue, RFPercentage} from '../../helpers';
 
 const styles = StyleSheet.create({
-  appName: {
-    ...globalStyles.normalBold,
+  appNameBold: {
+    marginTop: RFValue(22),
+    marginBottom: RFValue(2.5),
+    fontFamily: fonts.latoBold,
+    fontSize: 18,
     color: colors.gray,
-    marginVertical: 25,
-    textAlign: 'center'
+    textAlign: 'center',
+  },
+  appNameRegular: {
+    fontFamily: fonts.latoRegular,
+    fontSize: 18,
+    color: colors.gray,
+    textAlign: 'center',
   },
   modal: {
     margin: 0,
@@ -34,15 +42,11 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start'
   },
   content: {
-    flex: 1,
     alignItems: 'center'
   },
   containerTerms: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    marginVertical: RFValue(20),
-    paddingLeft: RFValue(15),
-    paddingRight: RFPercentage(15)
+    marginLeft: -10,
+    flexDirection: 'row'
   },
   illustration: {
     width: RFValue(120),
@@ -50,15 +54,18 @@ const styles = StyleSheet.create({
     ...isIphoneX() && { marginTop: 25 }
   },
   desc: {
-    ...globalStyles.description,
-    color: colors.gray
+    fontFamily: fonts.montserratRegular,
+    fontSize: 13,
+    color: colors.gray,
+    alignSelf: 'center'
   },
   textSpace: {
     marginVertical: 10
   },
   termsText: {
-    ...globalStyles.description,
-    color: colors.primary
+    fontFamily: fonts.montserratRegular,
+    fontSize: 12,
+    color: colors.primaryLight
   },
   learnMoreText: {
     ...globalStyles.descriptionBold,
@@ -76,66 +83,84 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    paddingHorizontal: 40,
-    marginVertical: RFValue(25)
+    paddingHorizontal: 35,
+    marginTop: 25,
+    marginBottom: 45
   },
   textInput: {
     width: '65%',
     height: '100%',
     marginHorizontal: 5,
+    paddingBottom: 5,
     ...Platform.OS === 'android' && { marginTop: -4.5 },
-    borderBottomWidth: 1,
-    borderBottomColor: colors.gray,
+    borderBottomWidth: 0.5,
+    borderBottomColor: colors.borderLine,
     paddingHorizontal: 10,
-    color: colors.gray,
-    ...globalStyles.title
+    textAlign: 'center',
+    fontFamily: fonts.latoRegular
+  },
+  phoneOnTyping: {
+    fontFamily: fonts.latoRegular,
+    fontSize: 14,
+    color: colors.gray
+  },
+  placeholder: {
+    color: colors.placeholder,
+    fontSize: 14,
+    fontFamily: fonts.latoRegular
   },
   btnContainer: {
-    height: 40,
+    height: 35,
+    width: 80,
     paddingVertical: 10,
     paddingHorizontal: 15,
     borderRadius: 4,
-    marginHorizontal: 5
+    marginHorizontal: 5,
+    alignItems: 'center'
   },
   btnEnter: {
-    backgroundColor: colors.primary
+    backgroundColor: colors.primary,
+    justifyContent: 'center'
   },
   btnEnterDisabled: {
-    backgroundColor: colors.gray400
+    backgroundColor: colors.disabled,
+    justifyContent: 'center'
   },
   btnEnterText: {
-    ...globalStyles.descriptionBold,
+    fontFamily: fonts.latoRegular,
+    fontSize: 12,
     textTransform: 'uppercase',
     color: colors.white
   },
   btnEnterTextDisabled: {
-    ...globalStyles.descriptionBold,
+    fontFamily: fonts.latoRegular,
+    fontSize: 12,
     textTransform: 'uppercase',
-    color: colors.grayDisable
+    color: colors.borderLine
   },
   centerContent: {
     flexDirection: 'row',
     justifyContent: 'center',
-    marginVertical: RFValue(10),
-    paddingHorizontal: RFValue(15)
+    marginTop: RFValue(50)
   },
   keyboardAvoid: {
     flex: 1
   },
   iconFlag: {
-    width: 25,
-    height: 30
+    resizeMode: 'cover',
+    width: 20,
+    height: 14
   },
   countryText: {
-    ...globalStyles.description,
+    fontFamily: fonts.latoRegular,
+    fontSize: 14,
     flex: 1,
     textAlign: 'center',
-    paddingHorizontal: 20,
-    fontWeight: '600'
+    paddingHorizontal: 20
   },
   countryCodeText: {
-    ...globalStyles.descriptionBold,
-    fontWeight: 'bold',
+    fontFamily: fonts.latoBold,
+    fontSize: 14,
     color: colors.gray
   },
   itemFlag: {
@@ -150,18 +175,19 @@ const styles = StyleSheet.create({
     backgroundColor: colors.graySmooth
   },
   placeholderCountryCode: {
-    ...globalStyles.title,
+    fontFamily: fonts.bold,
+    fontSize: 14,
     color: colors.gray,
     marginLeft: 5
   },
   containerInputCountryCode: {
-    height: 40,
+    height: 35,
     flexDirection: 'row',
     alignItems: 'center',
-    borderBottomColor: colors.gray,
-    borderBottomWidth: 1,
+    borderBottomColor: colors.borderLine,
+    borderBottomWidth: 0.5,
     paddingHorizontal: 5,
-    ...Platform.OS === 'android' && { paddingBottom: 5 }
+    bottom: 0.6
   },
   btnCancelCountryPicker: {
     textAlign: 'center',
@@ -183,27 +209,29 @@ const styles = StyleSheet.create({
     ...globalStyles.normal
   },
   arrowDown: {
+    alignSelf: 'center',
     width: 15,
     height: 15,
-    marginLeft: 5
+    marginLeft: 10
   },
   containerIconAppName: {
-    marginVertical: 10,
+    marginTop: RFValue(37),
     alignItems: 'center'
   },
   iconLock: {
     width: RFValue(20),
     height: RFValue(20),
-    marginRight: 10,
+    marginRight: 5,
     alignSelf: 'center'
   },
   iconInfo: {
-    marginTop: RFValue(2.5),
-    width: RFValue(15),
-    height: RFValue(15),
-    marginRight: 10,
+    marginRight: 7.5,
     resizeMode: 'contain',
     alignSelf: 'center'
+  },
+  containerTermsText: {
+    flex: 1,
+    alignSelf: 'flex-start'
   },
   textCountryNotFound: {
     ...globalStyles.description,

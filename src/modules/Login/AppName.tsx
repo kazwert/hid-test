@@ -5,12 +5,19 @@ import styles from './styles';
 
 function AppName(): JSX.Element {
   return (
-    <Text
-      style={styles.appName}
-      textBreakStrategy="balanced"
-    >
-    {options.appName} will not receive any of your personal information.
-    </Text>
+    <>
+      <Text
+        style={styles.appNameBold}
+        textBreakStrategy="balanced"
+      >
+        {options.appName} will not receive any
+      </Text>
+      <Text
+        style={styles.appNameRegular}
+        textBreakStrategy="balanced">
+        of your personal information.
+      </Text>
+    </>
   );
 }
 

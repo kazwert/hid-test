@@ -5,11 +5,16 @@ const {width, height} = Dimensions.get('window');
 const fonts = {
   base: 'Roboto-Regular',
   bold: 'Roboto-Bold',
-  thin: 'Roboto-Light'
+  thin: 'Roboto-Light',
+  latoRegular: 'Lato-Regular',
+  latoBold: 'Lato-Bold',
+  montserratRegular: 'Montserrat-Regular',
+  montserratMedium: 'Montserrat-Medium',
 };
 
 const colors = {
   primary: '#075070',
+  primaryLight: '#023B60',
   orange: '#F4C464',
   white: '#FFFFFF',
   gray: '#333333',
@@ -17,7 +22,10 @@ const colors = {
   graySmooth: '#E0E0E0',
   gray400: '#BDBDBD',
   black: '#333333',
-  background: '#E5E5E5'
+  background: '#E5E5E5',
+  placeholder: '#BDBDBD',
+  borderLine: '#A2A2A2',
+  disabled: '#CFD1D2'
 };
 
 const images = {
@@ -289,6 +297,10 @@ const globalStyles = {
     paddingHorizontal: 25,
     width: metrics.screenWidth
   },
+  headerTitle: {
+    fontSize: RFValue(17),
+    fontFamily: fonts.latoRegular
+  },
   title: {
     fontSize: RFValue(15),
     fontFamily: fonts.bold,
@@ -296,14 +308,12 @@ const globalStyles = {
     lineHeight: 18
   },
   otpText: {
-    fontSize: RFValue(24),
-    fontFamily: fonts.bold
+    fontSize: RFValue(18),
+    fontFamily: fonts.latoBold
   },
   normal: {
     fontSize: RFValue(14),
-    fontFamily: fonts.base,
-    letterSpacing: 1,
-    lineHeight: 18
+    fontFamily: fonts.latoRegular
   },
   normalBold: {
     fontSize: RFValue(14),
@@ -325,4 +335,4 @@ const globalStyles = {
   }
 };
 
-export {colors, images, globalStyles, metrics, flags};
+export {colors, images, globalStyles, metrics, flags, fonts};
