@@ -1,6 +1,5 @@
 import React, {useReducer} from 'react';
 import Login from './Login';
-import OTP from './OTP';
 import {Context} from '../core/Context';
 import {checkClient} from '../helpers';
 import useGlobalState from '../core/useGlobalState';
@@ -64,7 +63,6 @@ const MainComponent: IMainComponent = (_props, ref): React.ReactElement => {
         clearState
       }}>
       <Login />
-      <OTP />
     </Context.Provider>
   );
 };

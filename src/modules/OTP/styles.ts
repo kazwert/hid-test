@@ -1,10 +1,11 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet, Platform} from 'react-native';
 import {colors, globalStyles, metrics, fonts} from '../../themes';
 import {RFPercentage, RFValue} from '../../helpers';
 
 const styles = StyleSheet.create({
   modal: {
-    margin: 0
+    margin: 0,
+    ...Platform.OS === 'ios' && { marginTop: 20 },
   },
   container: {
     width: metrics.screenWidth,

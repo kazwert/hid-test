@@ -93,6 +93,7 @@ function Index(props: CountryPickerProps) {
       </TouchableOpacity>
       <Modal
         useNativeDriver={true}
+        hideModalContentWhileAnimating={true}
         isVisible={visible}
         coverScreen={true}
         style={styles.modalCountryPicker}

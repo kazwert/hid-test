@@ -20,7 +20,8 @@ const styles = StyleSheet.create({
   },
   modal: {
     margin: 0,
-    flex: 1
+    zIndex: 1,
+    ...Platform.OS === 'ios' && { marginTop: 20 },
   },
   container: {
     ...globalStyles.container,
@@ -39,6 +40,7 @@ const styles = StyleSheet.create({
     width: metrics.screenWidth,
     height: metrics.screenHeight,
     margin: 0,
+    ...Platform.OS === 'ios' && { paddingTop: 10 },
     justifyContent: 'flex-start'
   },
   content: {
@@ -139,8 +141,10 @@ const styles = StyleSheet.create({
     color: colors.borderLine
   },
   centerContent: {
-    flexDirection: 'row',
     justifyContent: 'center',
+    flexDirection: 'row',
+    ...Platform.OS === 'ios' && { width: metrics.screenWidth },
+    ...Platform.OS === 'ios' && { paddingLeft: RFValue(20) },
     marginTop: RFValue(50)
   },
   keyboardAvoid: {
@@ -206,6 +210,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
     marginBottom: 10,
     marginHorizontal: 15,
+    ...Platform.OS === 'ios' && { height: 35 },
     ...globalStyles.normal
   },
   arrowDown: {

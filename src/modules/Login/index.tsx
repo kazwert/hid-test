@@ -1,6 +1,7 @@
 import React, {useContext} from 'react';
-import {View, ScrollView} from 'react-native';
+import {View, ScrollView, Platform} from 'react-native';
 import Modal from 'react-native-modal';
+import OTP from '../OTP';
 import Header from '../Header';
 import Logo from './Logo';
 import Description from './Description';
@@ -27,11 +28,14 @@ function Login(): JSX.Element {
   return (
     <>
       <Modal
-        useNativeDriver={true}
         animationInTiming={200}
         animationOutTiming={200}
-        animationIn="slideInUp"
         animationOut="fadeOut"
+        animationIn={Platform.OS === 'ios' ? 'slideInRight' : 'slideInUp'}
+        propagateSwipe={true}
+        swipeThreshold={200}
+        swipeDirection={['right']}
+        onSwipeComplete={handleOnCancel}
         isVisible={loginVisible}
         onBackButtonPress={handleOnCancel}
         backdropOpacity={1}
@@ -49,6 +53,7 @@ function Login(): JSX.Element {
             </View>
           </View>
         </ScrollView>
+        <OTP />
       </Modal>
     </>
   );

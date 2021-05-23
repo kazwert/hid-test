@@ -34,7 +34,9 @@ const onCancel: IOnCancel = (callback) => {
 const onSuccess: IOnSuccess = (callback) => {
   EventRegister.addEventListener(ON_SUCCESS, (exchangeToken: string) => {
     if (exchangeToken) {
-      Toast.show('You’ve successfully logged in. Your data has been securely erased.', 6000);
+      setTimeout(() => {
+        Toast.show('You’ve successfully logged in. Your data has been securely erased.', 6000);
+      }, 500);
       callback(exchangeToken);
     }
   });
@@ -43,7 +45,9 @@ const onSuccess: IOnSuccess = (callback) => {
 const onError: IOnError = (callback) => {
   EventRegister.addEventListener(ON_ERROR, (error: string) => {
     if (error) {
-      Toast.show(error, 4000);
+      setTimeout(() => {
+        Toast.show(error, 4000);
+      }, 500)
       callback();
     }
   });

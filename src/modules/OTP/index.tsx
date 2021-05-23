@@ -1,5 +1,5 @@
 import React, {useContext} from 'react';
-import {View, ScrollView} from 'react-native';
+import {View, ScrollView, Platform} from 'react-native';
 import Modal from 'react-native-modal';
 import Header from '../Header';
 import styles from './styles';
@@ -21,12 +21,15 @@ function OTP(): JSX.Element {
 
   return (
     <Modal
-      useNativeDriver={true}
       style={styles.modal}
       isVisible={loginOTPVisible}
-      backdropOpacity={0.3}
+      backdropOpacity={0}
+      animationIn={Platform.OS === 'ios' ? 'slideInRight' : 'slideInUp'}
       onBackdropPress={hideSelf}
       onBackButtonPress={hideSelf}
+      swipeThreshold={200}
+      swipeDirection={['right']}
+      onSwipeComplete={hideSelf}
       coverScreen={true}
     >
       <ScrollView>

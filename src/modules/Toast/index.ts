@@ -1,4 +1,5 @@
 import { NativeModules, Platform } from 'react-native';
+import { convertDuration } from './helpers';
 
 const RCTToast = Platform.select({
     ios: NativeModules.LRDRCTSimpleToast,
@@ -22,7 +23,7 @@ export default {
     ) {
         RCTToast.show(
           message,
-          duration === undefined ? RCTToast.SHORT : duration,
+          duration === undefined ? RCTToast.SHORT : convertDuration(duration),
           viewControllerBlacklist
         );
     },
@@ -35,7 +36,7 @@ export default {
     ) {
         RCTToast.showWithGravity(
           message,
-          duration === undefined ? RCTToast.SHORT : duration,
+          duration === undefined ? RCTToast.SHORT : convertDuration(duration),
           gravity,
           viewControllerBlacklist
         );

@@ -60,10 +60,6 @@ function Form(): JSX.Element {
       EventRegister.emitEvent(ON_SUCCESS, exchangeToken);
       clearState();
       resetReducer();
-    } else if (state.loginPayload && !state.loginPayload?.success) {
-      setTimeout(() => {
-        otpRef.current?.bringUpKeyBoardIfNeeded();
-      }, 500);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [state.loginPayload]);
