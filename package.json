@@ -15,6 +15,12 @@
   "files": [
     "src",
     "lib",
+    "ios",
+    "cpp",
+    "human-id-react-native-humanid.podspec",
+    "!lib/typescript/example",
+    "!android/build",
+    "!ios/build",
     "!**/__tests__",
     "!**/__fixtures__",
     "!**/__mocks__",
