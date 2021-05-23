@@ -141,7 +141,6 @@ const styles = StyleSheet.create({
     color: colors.borderLine
   },
   centerContent: {
-    justifyContent: 'center',
     flexDirection: 'row',
     ...Platform.OS === 'ios' && { width: metrics.screenWidth },
     ...Platform.OS === 'ios' && { paddingLeft: RFValue(20) },

@@ -1,6 +1,6 @@
 import React from 'react';
 import {TextInput, View, Image, TouchableWithoutFeedback} from 'react-native';
-import {images} from '../../../themes';
+import {images, colors} from '../../../themes';
 import styles from '../styles';
 import {SearchCountryInputProps} from '../Login.interface';
 
@@ -19,6 +19,7 @@ function SearchCountryInput(props: SearchCountryInputProps): JSX.Element {
         placeholder="Search Country"
         style={styles.txInputCountrySearch}
         onChangeText={onChangeText}
+        placeholderTextColor={colors.placeholder}
       />
     </View>
   )

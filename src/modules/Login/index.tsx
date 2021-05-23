@@ -1,5 +1,5 @@
 import React, {useContext} from 'react';
-import {View, ScrollView, Platform} from 'react-native';
+import {View, ScrollView, Platform, StatusBar} from 'react-native';
 import Modal from 'react-native-modal';
 import OTP from '../OTP';
 import Header from '../Header';
@@ -43,6 +43,7 @@ function Login(): JSX.Element {
         style={styles.modal}
         coverScreen={true}>
         <ScrollView showsVerticalScrollIndicator={false} keyboardShouldPersistTaps="handled">
+          <StatusBar barStyle="dark-content" />
           <Header />
           <View style={styles.container}>
             <Logo />

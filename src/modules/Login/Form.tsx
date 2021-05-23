@@ -119,6 +119,7 @@ function Form() {
         placeholder="Phone Number"
         maxLength={15}
         selectionColor={colors.gray}
+        placeholderTextColor={colors.placeholder}
       />
       <Button enabled={isSubmitEnabled()} onPress={handleSubmit} />
     </View>
